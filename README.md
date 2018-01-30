@@ -1,8 +1,12 @@
-## Welcome to GitHub Pages
+## Distant Reading Papers
 
-You can use the [editor on GitHub](https://github.com/distantreading/papers.github.io/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
+You can add files here in Markdown, TEI, or PDF
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content you supply.
+
+TEI files will be rendered using CETEICEAN. 
+
+PDF files will be rendered?
 
 ### Markdown
 
