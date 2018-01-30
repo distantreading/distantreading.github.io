@@ -1,12 +1,13 @@
 ## Distant Reading Papers
 
-You can add files here in Markdown, TEI, or PDF
+You can add files here in TEI, Markdown, or PDF
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content you supply.
 
-TEI files will be rendered using CETEICEAN. 
+TEI files will be rendered using [CETEIcean](https://github.com/TEIC/CETEIcean). 
 
 PDF files will be rendered?
+
+Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content you supply.
 
 ### Markdown
 
