@@ -1,13 +1,22 @@
-## Distant Reading Papers
+# Distant Reading Papers
+
+## WG1 Discussion Papers
+
+- [Sampling Proposals](./sampling_proposal.html)
+- [Encoding Proposals](./encoding_proposal.html)
+- [Workflow Proposals](./workflow_proposal.html)
+
+## Other Papers
 
 You can add files here in TEI, Markdown, or PDF
-
-
 TEI files will be rendered using [CETEIcean](https://github.com/TEIC/CETEIcean). 
-
-PDF files will be rendered?
+PDF files will be rendered using a built in viewer
 
 Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content you supply.
+
+### TEI 
+
+Papers authored in TEI Lite, TEI Simple, or JTEI should all be rendered correctly. Add an issue to this repo if there any problems.
 
 ### Markdown
 
