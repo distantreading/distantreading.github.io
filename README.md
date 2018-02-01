@@ -1,10 +1,10 @@
-# Distant Reading Papers
+
 
 ## WG1 Discussion Papers
 
-- [Sampling Proposals](./sampling_proposal.html)
-- [Encoding Proposals](./encoding_proposal.html)
-- [Workflow Proposals](./workflow_proposal.html)
+- [Sampling Criteria for the ELTeC](./sampling_proposal.html) last updated 2018-01-31
+- [Encoding Guidelines for the ELTeC](./encoding_proposal.html) last updated 2018-01-28
+- [Workflow Proposals](./workflow_proposal.html) last updated 2019-02-01
 
 ## Other Papers
 
@@ -16,7 +16,7 @@ Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://j
 
 ### TEI 
 
-Papers authored in TEI Lite, TEI Simple, or JTEI should all be rendered correctly. Add an issue to this repo if there any problems.
+Papers authored in [TEI Lite](http://www.tei-c.org/release/doc/tei-p5-exemplars/pdf/tei_lite.doc.pdf), TEI Simple, or [JTEI](https://www.oxygenxml.com/doc/versions/19.1/ug-developer/topics/author-jtei-doc-type.html) should all be rendered correctly. Add an issue to this repo if there any problems.
 
 ### Markdown
 
