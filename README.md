@@ -2,11 +2,14 @@
 
 ## WG1 Discussion Papers
 
-- [Sampling Criteria for the ELTeC](https://distantreading.github.io/sampling_proposal.html) last updated 2018-01-31
-- [Encoding Guidelines for the ELTeC](https://distantreading.github.io/encoding_proposal.html) last updated 2018-01-28
-- [Workflow Proposals](https://distantreading.github.io/workflow_proposal.html) last updated 2019-02-01
+- [Sampling Criteria for the ELTeC](https://distantreading.github.io/sampling_proposal.html) [printablePDF](https://distantreading.github.io/sampling_proposal.pdf) last updated 2018-01-31
+- [Encoding Guidelines for the ELTeC](https://distantreading.github.io/encoding_proposal.html) [printablePDF](https://distantreading.github.io/encoding_proposal.pdf)last updated 2018-01-28
+- [Workflow Proposals](https://distantreading.github.io/workflow_proposal.html) [printablePDF](https://distantreading.github.io/workflow_proposal.pdf)last updated 2019-02-01
 
 ## Other Papers
+
+- [Encoding Slides](https://distantreading.github.io/encoding_slides.html) 
+
 
 You can add files here in TEI, Markdown, or PDF
 TEI files will be rendered using [CETEIcean](https://github.com/TEIC/CETEIcean). 
