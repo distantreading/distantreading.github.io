@@ -2,9 +2,9 @@
 
 ## WG1 Discussion Papers
 
-- [Sampling Criteria for the ELTeC](https://distantreading.github.io/sampling_proposal.html) [printablePDF](https://distantreading.github.io/sampling_proposal.pdf) last updated 2018-01-31
-- [Encoding Guidelines for the ELTeC](https://distantreading.github.io/encoding_proposal.html) [printablePDF](https://distantreading.github.io/encoding_proposal.pdf)last updated 2018-01-28
-- [Workflow Proposals](https://distantreading.github.io/workflow_proposal.html) [printablePDF](https://distantreading.github.io/workflow_proposal.pdf)last updated 2019-02-01
+- [Sampling Criteria for the ELTeC](https://distantreading.github.io/sampling_proposal.html); also as [printablePDF](https://distantreading.github.io/sampling_proposal.pdf) last updated 2018-01-31
+- [Encoding Guidelines for the ELTeC](https://distantreading.github.io/encoding_proposal.html); also as  [printablePDF](https://distantreading.github.io/encoding_proposal.pdf)last updated 2018-01-28
+- [Workflow Proposals](https://distantreading.github.io/workflow_proposal.html); also as  [printablePDF](https://distantreading.github.io/workflow_proposal.pdf)last updated 2019-02-01
 
 ## Other Papers
 
