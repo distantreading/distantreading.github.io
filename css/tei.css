@@ -116,7 +116,7 @@ body.pagetable{
     color:#333333;
     margin:2pt;
     padding:5px;
-    float:right;
+  /*    float:right; */
     width:75%;
     font-weight:normal;
 }
@@ -698,8 +698,13 @@ div.q{
 /* figures */
 .figure{
     display:block;
-    border-top:solid 1pt blue;
+    margin-top: 4pt;
+    margin-bottom: 8pt;
+   /*   border-top:solid 1pt blue;
+    border-left:solid 1pt blue;
+    border-right:solid 1pt blue;
     border-bottom:solid 1pt blue;
+*/ 
 }
 .caption{
     margin-top:6pt;
@@ -1043,13 +1048,13 @@ span.lemma{
 span.lemmawitness{
     font-weight:bold;
 }
-span.listhead{
+.listhead{
     display:block;
     margin-top:0em;
     margin-right:1em;
     padding-left:3px;
     padding-right:3px;
-    font-weight:bold;
+    font-style:italic;
 }
 table.border td{
     vertical-align:top;
