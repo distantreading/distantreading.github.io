@@ -9,7 +9,7 @@
 ## Other Papers
 
 - [Sampling Slides](https://distantreading.github.io/sampling_slides.html) 
-- [Encoding Slides](https://distantreading.github.io/encoding_slides.html) 
+- [Encoding Slides](https://distantreading.github.io/encoding_slides.pdf) 
 
 
 You can add files here in TEI, Markdown, or PDF
