@@ -8,6 +8,7 @@
 
 ## Other Papers
 
+- [Sampling Slides](https://distantreading.github.io/sampling_slides.html) 
 - [Encoding Slides](https://distantreading.github.io/encoding_slides.html) 
 
 
