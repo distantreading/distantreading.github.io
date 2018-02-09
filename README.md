@@ -8,8 +8,8 @@
 
 ## Other Papers
 
-- [Sampling Slides](https://distantreading.github.io/sampling_slides.html) 
-- [Encoding Slides](https://distantreading.github.io/encoding_slides.pdf) 
+- [Sampling Slides](https://distantreading.github.io/sampling_slides.pdf) 
+- [Encoding Slides](https://distantreading.github.io/encoding_slides.html) 
 
 
 You can add files here in TEI, Markdown, or PDF
