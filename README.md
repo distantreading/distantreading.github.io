@@ -10,9 +10,10 @@
 
 ### WG1 first meeting (Praha, 12-14 February, 2018)
 
+- [Introductions](https://distantreading.github.io/introduction_slides.pdf)
 - [Sampling Slides](https://distantreading.github.io/sampling_slides.pdf) 
 - [Encoding Slides](https://distantreading.github.io/encoding_slides.html) 
-- [Workflow Slides](https://distantreading.github.io/workflow_slides.html) 
+- [Workflow Slides](https://distantreading.github.io/workflow_slides.pdf) 
 
 - [Notes on discussions](https://mensuel.framapad.org/p/distantReadingWG1-2018-02)
 
