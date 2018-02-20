@@ -8,9 +8,13 @@
 
 ## Other Papers
 
+### WG1 first meeting (Praha, 12-14 February, 2018)
+
 - [Sampling Slides](https://distantreading.github.io/sampling_slides.pdf) 
 - [Encoding Slides](https://distantreading.github.io/encoding_slides.html) 
+- [Workflow Slides](https://distantreading.github.io/workflow_slides.html) 
 
+- [Notes on discussions](https://mensuel.framapad.org/p/distantReadingWG1-2018-02)
 
 You can add files here in TEI, Markdown, or PDF
 TEI files will be rendered using [CETEIcean](https://github.com/TEIC/CETEIcean). 
