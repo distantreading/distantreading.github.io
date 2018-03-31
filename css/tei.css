@@ -555,7 +555,11 @@ div.p blockquote p{
     -webkit-margin-end:p0px;
 }
 p.box{
-    border:1pt solid #000000;
+    border:1pt solid gray;
+    margin-left: 10px;
+     margin-right: 10px;
+      margin-top: 10px;
+       margin-bottom: 10px;
 }
 
 /* verse */
