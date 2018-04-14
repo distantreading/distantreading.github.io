@@ -6,7 +6,7 @@ namespace teix = "http://www.tei-c.org/ns/Examples"
 namespace xi = "http://www.w3.org/2001/XInclude"
 namespace xlink = "http://www.w3.org/1999/xlink"
 
-# Schema generated from ODD source 2018-04-11T16:57:54Z. .
+# Schema generated from ODD source 2018-04-13T17:44:03Z. .
 # TEI Edition: 
 # TEI Edition Location: http://www.tei-c.org/Vault/P5//
 #
@@ -536,9 +536,6 @@ model.placeStateLike_sequenceOptionalRepeatable =
   model.placeNamePart_sequenceOptionalRepeatable*
 model.placeStateLike_sequenceRepeatable =
   model.placeNamePart_sequenceRepeatable+
-model.publicationStmtPart.agency = publisher
-model.publicationStmtPart.detail =
-  model.ptrLike | pubPlace | date | idno
 model.descLike = notAllowed
 model.glossLike = notAllowed
 model.quoteLike = notAllowed
@@ -676,13 +673,7 @@ extent =
 publicationStmt =
   
   ## (publication statement) groups information concerning the publication or distribution of an electronic or other text. [2.2.4. Publication, Distribution, Licensing, etc. 2.2. The File Description]
-  element publicationStmt {
-    ((model.publicationStmtPart.agency,
-      model.publicationStmtPart.detail*)+
-     | model.pLike+),
-    att.global.attributes,
-    empty
-  }
+  element publicationStmt { p, att.global.attributes, empty }
 sourceDesc =
   
   ## (source description) describes the source from which an electronic text was derived or generated, typically a bibliographic description in the case of a digitized text, or a phrase such as "born digital" for a text which has no previous existence. [2.2.7. The Source Description]
