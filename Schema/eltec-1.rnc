@@ -6,7 +6,7 @@ namespace teix = "http://www.tei-c.org/ns/Examples"
 namespace xi = "http://www.w3.org/2001/XInclude"
 namespace xlink = "http://www.w3.org/1999/xlink"
 
-# Schema generated from ODD source 2018-04-15T16:13:01Z. .
+# Schema generated from ODD source 2018-04-15T16:53:57Z. .
 # TEI Edition: 
 # TEI Edition Location: http://www.tei-c.org/Vault/P5//
 #
@@ -473,7 +473,7 @@ model.pPart.transcriptional_sequenceOptional = corr?
 model.pPart.transcriptional_sequenceOptionalRepeatable = corr*
 model.pPart.transcriptional_sequenceRepeatable = corr+
 model.pPart.edit = model.pPart.editorial | model.pPart.transcriptional
-model.ptrLike = ref | ref
+model.ptrLike = ref
 model.lPart = notAllowed
 model.global.meta = notAllowed
 model.milestoneLike = milestone | pb
@@ -1311,6 +1311,40 @@ publisher =
   
   ## provides the name of the organization responsible for the publication or distribution of a bibliographic item. [3.11.2.4. Imprint, Size of a Document, and Reprint Information 2.2.4. Publication, Distribution, Licensing, etc.]
   element publisher { macro.phraseSeq, att.global.attributes, empty }
+ref =
+  
+  ## (reference) defines a reference to another location, possibly modified by additional text or comment. [3.6. Simple Links and Cross-References 16.1. Links]
+  element ref {
+    macro.paraContent
+    >> sch:pattern [
+         id = "eltec-1-ref-refAtts-constraint-report-9"
+         "\x{a}" ~
+         "            "
+         sch:rule [
+           context = "tei:ref"
+           "\x{a}" ~
+           "               "
+           sch:report [
+             test = "@target and @cRef"
+             "Only one of the\x{a}" ~
+             "	attributes @target' and @cRef' may be supplied on "
+             sch:name [ ]
+             "\x{a}" ~
+             "               "
+           ]
+           "\x{a}" ~
+           "            "
+         ]
+         "\x{a}" ~
+         "         "
+       ],
+    att.global.attributes,
+    att.pointing.attributes,
+    att.internetMedia.attributes,
+    att.typed.attributes,
+    att.cReferencing.attributes,
+    empty
+  }
 relatedItem =
   
   ## contains or references some other bibliographic item which is related to the present one in some specified manner, for example as a constituent or alternative version of it. [3.11.2.7. Related Items]
@@ -1318,7 +1352,7 @@ relatedItem =
     ((model.biblLike | model.ptrLike)?)
     >> sch:pattern [
          id =
-           "eltec-1-relatedItem-targetorcontent1-constraint-report-11"
+           "eltec-1-relatedItem-targetorcontent1-constraint-report-10"
          "\x{a}" ~
          "            "
          sch:rule [
