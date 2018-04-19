@@ -1,12 +1,17 @@
 
 
-## WG1 Discussion Papers
+## WG1 Working Papers
 
 - [Sampling Criteria for the ELTeC](https://distantreading.github.io/sampling_proposal.html); also as [printablePDF](https://distantreading.github.io/sampling_proposal.pdf) last updated 2018-03-11
 - [Encoding Guidelines for the ELTeC](https://distantreading.github.io/encoding_proposal.html); also as  [printablePDF](https://distantreading.github.io/encoding_proposal.pdf) last updated 2018-03-17
 - [Workflow Proposals](https://distantreading.github.io/workflow_proposal.html); also as  [printablePDF](https://distantreading.github.io/workflow_proposal.pdf) last updated 2019-02-01
 
-## Other Papers
+## Meetings
+
+### Training School on „Optical Character Recognition and Text Encoding for the production of ELTeC“ (University of Würzburg, 16-17 April, 2018)
+
+- [Optical Character Recognition](https://distantreading.github.io/Training/OCRprogramme.md)
+- [Building the ELTeC : creating marked up texts](https://distantreading.github.io/Training/programme.html)
 
 ### WG1 first meeting (Praha, 12-14 February, 2018)
 
