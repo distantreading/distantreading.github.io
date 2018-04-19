@@ -10,7 +10,7 @@
 
 ### Training School on „Optical Character Recognition and Text Encoding for the production of ELTeC“ (University of Würzburg, 16-17 April, 2018)
 
-- [Optical Character Recognition](https://distantreading.github.io/Training/OCRprogramme.md)
+- [Optical Character Recognition](https://distantreading.github.io/Training/OCRprog.html)
 - [Building the ELTeC : creating marked up texts](https://distantreading.github.io/Training/programme.html)
 
 ### WG1 first meeting (Praha, 12-14 February, 2018)
