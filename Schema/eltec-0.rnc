@@ -6,7 +6,7 @@ namespace teix = "http://www.tei-c.org/ns/Examples"
 namespace xi = "http://www.w3.org/2001/XInclude"
 namespace xlink = "http://www.w3.org/1999/xlink"
 
-# Schema generated from ODD source 2018-04-30T15:21:04Z. .
+# Schema generated from ODD source 2018-05-12T18:16:09Z. .
 # TEI Edition: 
 # TEI Edition Location: http://www.tei-c.org/Vault/P5//
 #
@@ -47,44 +47,6 @@ att.canonical.attribute.ref =
   attribute ref {
     list { xsd:anyURI+ }
   }?
-att.dimensions.attributes =
-  att.dimensions.attribute.unit,
-  att.dimensions.attribute.quantity,
-  att.dimensions.attribute.extent
-att.dimensions.attribute.unit =
-  
-  ## names the unit used for the measurement
-  ## Suggested values include: 1] cm (centimetres) ; 2] mm (millimetres) ; 3] in (inches) ; 4] lines; 5] chars (characters) 
-  attribute unit {
-    
-    ## (centimetres) 
-    "cm"
-    | 
-      ## (millimetres) 
-      "mm"
-    | 
-      ## (inches) 
-      "in"
-    | 
-      ## lines of text
-      "lines"
-    | 
-      ## (characters) characters of text
-      "chars"
-    | xsd:token { pattern = "(\p{L}|\p{N}|\p{P}|\p{S})+" }
-  }?
-att.dimensions.attribute.quantity =
-  
-  ## specifies the length in the units specified
-  attribute quantity {
-    xsd:double
-    | xsd:token { pattern = "(\-?[\d]+/\-?[\d]+)" }
-    | xsd:decimal
-  }?
-att.dimensions.attribute.extent =
-  
-  ## indicates the size of the object concerned using a project-specific vocabulary combining quantity and units in a single string of words.
-  attribute extent { xsd:string }?
 att.cReferencing.attributes = att.cReferencing.attribute.cRef
 att.cReferencing.attribute.cRef =
   
@@ -853,7 +815,7 @@ TEI =
     att.global.attributes,
     att.typed.attributes,
     
-    ## specifies the version number of the TEI Guidelines against which this document is valid.
+    ## specifies the major version number of the TEI Guidelines against which this document is valid.
     attribute version {
       xsd:token { pattern = "[\d]+(\.[\d]+){0,2}" }
     }?,
@@ -1023,7 +985,7 @@ p =
   element p {
     macro.paraContent
     >> sch:pattern [
-         id = "eltec-0-p-abstractModel-structure-p-constraint-report-7"
+         id = "eltec-0-p-abstractModel-p-constraint-report-7"
          "\x{a}" ~
          "            "
          sch:rule [
@@ -1032,9 +994,9 @@ p =
            "               "
            sch:report [
              test =
-               "not(ancestor::tei:floatingText) and (ancestor::tei:p or ancestor::tei:ab)          and not(parent::tei:exemplum                |parent::tei:item                |parent::tei:note                |parent::tei:q                |parent::tei:quote                |parent::tei:remarks                |parent::tei:said                |parent::tei:sp                |parent::tei:stage                |parent::tei:cell                |parent::tei:figure                )"
+               "not(ancestor::floatingText) and (ancestor::tei:p or ancestor::tei:ab)          and not(parent::tei:exemplum                |parent::tei:item                |parent::tei:note                |parent::tei:q                |parent::tei:quote                |parent::tei:remarks                |parent::tei:said                |parent::tei:sp                |parent::tei:stage                |parent::tei:cell                |parent::tei:figure                )"
              "\x{a}" ~
-             "        Abstract model violation: Paragraphs may not occur inside other paragraphs or ab elements.\x{a}" ~
+             "        Abstract model violation: Paragraphs may not contain other paragraphs or ab elements.\x{a}" ~
              "      "
            ]
            "\x{a}" ~
@@ -1152,7 +1114,6 @@ date =
     (text | model.gLike | model.phrase | model.global)*,
     att.global.attributes,
     att.datable.attributes,
-    att.dimensions.attributes,
     att.typed.attributes,
     empty
   }
@@ -1184,7 +1145,7 @@ idno =
         ## English Short-Title Catalogue number: an identifying number assigned to a document in English printed in the British Isles or North America before 1801.
         "ESTC"
       | 
-        ## OCLC control number (record number) for the union catalog record in WorldCat, a union catalog for member libraries in the Online Computer Library Center global cooperative.
+        ## union catalog number in WorldCat representing a resource held by one or more of the member libraries in the global cooperative Online Computer Library Center.
         "OCLC"
       | xsd:token { pattern = "(\p{L}|\p{N}|\p{P}|\p{S})+" }
     }?,
