@@ -1,4 +1,6 @@
+## WG1 Discussion drafts
 
+- [on the wiki](https://github.com/distantreading/WG1/wiki)
 
 ## WG1 Working Papers
 
