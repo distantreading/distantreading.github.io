@@ -6,7 +6,7 @@ namespace teix = "http://www.tei-c.org/ns/Examples"
 namespace xi = "http://www.w3.org/2001/XInclude"
 namespace xlink = "http://www.w3.org/1999/xlink"
 
-# Schema generated from ODD source 2018-05-12T18:16:14Z. .
+# Schema generated from ODD source 2018-05-15T16:53:30Z. .
 # TEI Edition: 
 # TEI Edition Location: http://www.tei-c.org/Vault/P5//
 #
@@ -181,28 +181,6 @@ sch:pattern [
   "   "
 ]
 att.datable.attributes = att.datable.w3c.attributes
-att.fragmentable.attributes = att.fragmentable.attribute.part
-att.fragmentable.attribute.part =
-  
-  ## specifies whether or not its parent element is fragmented in some way, typically by some other overlapping structure: for example a speech which is divided between two or more verse stanzas, a paragraph which is split across a page division, a verse line which is divided between two speakers.
-  [ a:defaultValue = "N" ]
-  attribute part {
-    
-    ## (yes) the element is fragmented in some (unspecified) respect
-    "Y"
-    | 
-      ## (no) the element is not fragmented, or no claim is made as to its completeness
-      "N"
-    | 
-      ## (initial) this is the initial part of a fragmented element
-      "I"
-    | 
-      ## (medial) this is a medial part of a fragmented element
-      "M"
-    | 
-      ## (final) this is the final part of a fragmented element
-      "F"
-  }?
 att.docStatus.attributes = att.docStatus.attribute.status
 att.docStatus.attribute.status =
   
@@ -221,16 +199,8 @@ att.global.rendition.attribute.rend =
       xsd:token { pattern = "(\p{L}|\p{N}|\p{P}|\p{S})+" }+
     }
   }?
-att.global.source.attributes = att.global.source.attribute.source
-att.global.source.attribute.source =
-  
-  ## specifies the source from which some aspect of this element is drawn.
-  attribute source {
-    list { xsd:anyURI+ }
-  }?
 att.global.attributes =
   att.global.rendition.attributes,
-  att.global.source.attributes,
   att.global.attribute.xmlid,
   att.global.attribute.n,
   att.global.attribute.xmllang,
@@ -358,52 +328,6 @@ att.sortable.attribute.sortKey =
   attribute sortKey {
     xsd:token { pattern = "(\p{L}|\p{N}|\p{P}|\p{S})+" }
   }?
-att.edition.attributes =
-  att.edition.attribute.ed, att.edition.attribute.edRef
-att.edition.attribute.ed =
-  
-  ## (edition) supplies a sigil or other arbitrary identifier for the source edition in which the associated feature (for example, a page, column, or line break) occurs at this point in the text.
-  attribute ed {
-    list {
-      xsd:token { pattern = "(\p{L}|\p{N}|\p{P}|\p{S})+" }+
-    }
-  }?
-att.edition.attribute.edRef =
-  
-  ## (edition reference) provides a pointer to the source edition in which the associated feature (for example, a page, column, or line break) occurs at this point in the text.
-  attribute edRef {
-    list { xsd:anyURI+ }
-  }?
-att.spanning.attributes = att.spanning.attribute.spanTo
-att.spanning.attribute.spanTo =
-  
-  ## indicates the end of a span initiated by the element bearing this attribute.
-  attribute spanTo { xsd:anyURI }?
-sch:pattern [
-  id = "eltec-1-att.spanning-spanTo-spanTo-2-constraint-rule-5"
-  "\x{a}" ~
-  "      "
-  sch:rule [
-    context = "tei:*[@spanTo]"
-    "\x{a}" ~
-    "            "
-    sch:assert [
-      test =
-        "id(substring(@spanTo,2)) and following::*[@xml:id=substring(current()/@spanTo,2)]"
-      "\x{a}" ~
-      "The element indicated by @spanTo ("
-      sch:value-of [ select = "@spanTo" ]
-      ") must follow the current element "
-      sch:name [ ]
-      "\x{a}" ~
-      "                  "
-    ]
-    "\x{a}" ~
-    "          "
-  ]
-  "\x{a}" ~
-  "   "
-]
 att.timed.attributes =
   att.timed.attribute.start, att.timed.attribute.end
 att.timed.attribute.start =
@@ -613,6 +537,7 @@ model.biblPart =
   | bibl
   | idno
   | relatedItem
+  | title
 model.frontPart = model.frontPart.drama
 model.pPart.data =
   model.dateLike
@@ -1051,7 +976,6 @@ l =
          "         "
        ],
     att.global.attributes,
-    att.fragmentable.attributes,
     empty
   }
 milestone =
@@ -1059,12 +983,7 @@ milestone =
   ## marks a boundary point separating any kind of section of a text, typically but not necessarily indicating a point at which some part of a standard reference system changes, where the change is not represented by a structural element. [3.10.3. Milestone
   ## Elements]
   element milestone {
-    empty,
-    att.global.attributes,
-    att.typed.attributes,
-    att.edition.attributes,
-    att.spanning.attributes,
-    empty
+    empty, att.global.attributes, att.typed.attributes, empty
   }
 note =
   
@@ -1133,7 +1052,6 @@ p =
          "         "
        ],
     att.global.attributes,
-    att.fragmentable.attributes,
     empty
   }
 pb =
@@ -1141,12 +1059,7 @@ pb =
   ## (page beginning) marks the beginning of a new page in a paginated document. [3.10.3. Milestone
   ## Elements]
   element pb {
-    empty,
-    att.global.attributes,
-    att.typed.attributes,
-    att.edition.attributes,
-    att.spanning.attributes,
-    empty
+    empty, att.global.attributes, att.typed.attributes, empty
   }
 quote =
   
@@ -1170,7 +1083,6 @@ quote =
     att.global.attribute.xmlbase,
     att.global.attribute.xmlspace,
     att.global.rendition.attribute.rend,
-    att.global.source.attribute.source,
     att.typed.attributes,
     
     ## (identifier) provides a unique identifier for the element bearing the attribute.
@@ -1374,7 +1286,7 @@ relatedItem =
          "         "
        ]
     >> sch:pattern [
-         id = "eltec-1-relatedItem-targetorcontent1-constraint-assert-3"
+         id = "eltec-1-relatedItem-targetorcontent1-constraint-assert-2"
          "\x{a}" ~
          "            "
          sch:rule [
@@ -1438,14 +1350,6 @@ title =
   element title {
     macro.paraContent,
     att.global.attributes,
-    att.canonical.attributes,
-    att.datable.attributes,
-    
-    ## classifies the title according to some convenient typology.
-    ## Sample values include: 1] main; 2] sub (subordinate) ; 3] alt (alternate) ; 4] short; 5] desc (descriptive) 
-    attribute type {
-      xsd:token { pattern = "(\p{L}|\p{N}|\p{P}|\p{S})+" }
-    }?,
     
     ## indicates the bibliographic level for a title, that is, whether it identifies an article, book, journal, series, or unpublished material.
     attribute level {
