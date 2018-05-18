@@ -6,7 +6,7 @@ namespace teix = "http://www.tei-c.org/ns/Examples"
 namespace xi = "http://www.w3.org/2001/XInclude"
 namespace xlink = "http://www.w3.org/1999/xlink"
 
-# Schema generated from ODD source 2018-05-17T21:23:26Z. .
+# Schema generated from ODD source 2018-05-18T19:45:33Z. .
 # TEI Edition: 
 # TEI Edition Location: http://www.tei-c.org/Vault/P5//
 #
@@ -28,30 +28,6 @@ macro.specialPara =
    | model.inter
    | model.divPart
    | model.global)*
-att.ascribed.attributes = att.ascribed.attribute.who
-att.ascribed.attribute.who =
-  
-  ## indicates the person, or group of people, to whom the element content is ascribed.
-  attribute who {
-    list { xsd:anyURI+ }
-  }?
-att.canonical.attributes =
-  att.canonical.attribute.key, att.canonical.attribute.ref
-att.canonical.attribute.key =
-  
-  ## provides an externally-defined means of identifying the entity (or entities) being named, using a coded value of some kind.
-  attribute key { xsd:string }?
-att.canonical.attribute.ref =
-  
-  ## (reference) provides an explicit means of locating a full definition or identity for the entity being named by means of one or more URIs.
-  attribute ref {
-    list { xsd:anyURI+ }
-  }?
-att.cReferencing.attributes = att.cReferencing.attribute.cRef
-att.cReferencing.attribute.cRef =
-  
-  ## (canonical reference) specifies the destination of the pointer by supplying a canonical reference expressed using the scheme defined in a refsDecl element in the TEI header
-  attribute cRef { xsd:string }?
 att.datable.w3c.attributes =
   att.datable.w3c.attribute.when,
   att.datable.w3c.attribute.notBefore,
@@ -181,15 +157,6 @@ sch:pattern [
   "   "
 ]
 att.datable.attributes = att.datable.w3c.attributes
-att.docStatus.attributes = att.docStatus.attribute.status
-att.docStatus.attribute.status =
-  
-  ## describes the status of a document either currently or, when associated with a dated element, at the time indicated.
-  ## Sample values include: 1] approved; 2] candidate; 3] cleared; 4] deprecated; 5] draft; 6] embargoed; 7] expired; 8] frozen; 9] galley; 10] proposed; 11] published; 12] recommendation; 13] submitted; 14] unfinished; 15] withdrawn
-  [ a:defaultValue = "draft" ]
-  attribute status {
-    xsd:token { pattern = "(\p{L}|\p{N}|\p{P}|\p{S})+" }
-  }?
 att.global.rendition.attributes = att.global.rendition.attribute.rend
 att.global.rendition.attribute.rend =
   
@@ -238,55 +205,6 @@ att.global.attribute.xmlspace =
       ## indicates the intent that applications preserve all white space
       "preserve"
   }?
-att.internetMedia.attributes = att.internetMedia.attribute.mimeType
-att.internetMedia.attribute.mimeType =
-  
-  ## (MIME media type) specifies the applicable multimedia internet mail extension (MIME) media type
-  attribute mimeType {
-    list {
-      xsd:token { pattern = "(\p{L}|\p{N}|\p{P}|\p{S})+" }+
-    }
-  }?
-att.placement.attributes = att.placement.attribute.place
-att.placement.attribute.place =
-  
-  ## specifies where this item is placed.
-  ## Suggested values include: 1] below; 2] bottom; 3] margin; 4] top; 5] opposite; 6] overleaf; 7] above; 8] end; 9] inline; 10] inspace
-  attribute place {
-    list {
-      (
-       ## below the line
-       "below"
-       | 
-         ## at the foot of the page
-         "bottom"
-       | 
-         ## in the margin (left, right, or both)
-         "margin"
-       | 
-         ## at the top of the page
-         "top"
-       | 
-         ## on the opposite, i.e. facing, page
-         "opposite"
-       | 
-         ## on the other side of the leaf
-         "overleaf"
-       | 
-         ## above the line
-         "above"
-       | 
-         ## at the end of e.g. chapter or volume.
-         "end"
-       | 
-         ## within the body of the text.
-         "inline"
-       | 
-         ## in a predefined space, for example left by an earlier scribe.
-         "inspace"
-       | xsd:token { pattern = "(\p{L}|\p{N}|\p{P}|\p{S})+" })+
-    }
-  }?
 att.typed.attributes = att.typed.attribute.type
 att.typed.attribute.type =
   
@@ -328,16 +246,6 @@ att.sortable.attribute.sortKey =
   attribute sortKey {
     xsd:token { pattern = "(\p{L}|\p{N}|\p{P}|\p{S})+" }
   }?
-att.timed.attributes =
-  att.timed.attribute.start, att.timed.attribute.end
-att.timed.attribute.start =
-  
-  ## indicates the location within a temporal alignment at which this element begins.
-  attribute start { xsd:anyURI }?
-att.timed.attribute.end =
-  
-  ## indicates the location within a temporal alignment at which this element ends.
-  attribute end { xsd:anyURI }?
 model.nameLike.agent = name
 model.nameLike.agent_alternation = name
 model.nameLike.agent_sequence = name
@@ -717,20 +625,16 @@ catRef =
 revisionDesc =
   
   ## (revision description) summarizes the revision history for a file. [2.6. The Revision Description 2.1.1. The TEI Header and Its Components]
-  element revisionDesc {
-    (change+), att.global.attributes, att.docStatus.attributes, empty
-  }
+  element revisionDesc { (change+), att.global.attributes, empty }
 change =
   
   ## documents a change or set of changes made during the production of a source document, or during the revision of an electronic file. [2.6. The Revision Description 2.4.1. Creation 11.7. Identifying Changes and Revisions]
   element change {
     macro.specialPara,
-    att.ascribed.attributes,
     att.datable.w3c.attribute.notBefore,
     att.datable.w3c.attribute.notAfter,
     att.datable.w3c.attribute.from,
     att.datable.w3c.attribute.to,
-    att.docStatus.attributes,
     att.global.attributes,
     att.typed.attributes,
     
@@ -904,7 +808,6 @@ gap =
   element gap {
     (model.descLike | model.certLike)*,
     att.global.attributes,
-    att.timed.attributes,
     
     ## gives the reason for omission
     ## Suggested values include: 1] cancelled; 2] deleted; 3] editorial; 4] illegible; 5] inaudible; 6] irrelevant; 7] sampling
@@ -957,7 +860,6 @@ head =
      | model.global)*,
     att.global.attributes,
     att.typed.attributes,
-    att.placement.attributes,
     empty
   }
 hi =
@@ -1006,7 +908,6 @@ note =
   element note {
     macro.specialPara,
     att.global.attributes,
-    att.placement.attributes,
     att.pointing.attributes,
     att.typed.attributes,
     
@@ -1146,7 +1047,6 @@ bibl =
     att.global.attributes,
     att.typed.attributes,
     att.sortable.attributes,
-    att.docStatus.attributes,
     empty
   }
 date =
@@ -1267,9 +1167,7 @@ ref =
        ],
     att.global.attributes,
     att.pointing.attributes,
-    att.internetMedia.attributes,
     att.typed.attributes,
-    att.cReferencing.attributes,
     empty
   }
 relatedItem =
@@ -1332,7 +1230,6 @@ resp =
   element resp {
     macro.phraseSeq.limited,
     att.global.attributes,
-    att.canonical.attributes,
     att.datable.attributes,
     empty
   }
@@ -1343,7 +1240,6 @@ respStmt =
     (((resp+, model.nameLike.agent+) | (model.nameLike.agent+, resp+)),
      note*),
     att.global.attributes,
-    att.canonical.attributes,
     empty
   }
 term =
@@ -1354,9 +1250,7 @@ term =
     att.global.attributes,
     att.pointing.attributes,
     att.typed.attributes,
-    att.canonical.attributes,
     att.sortable.attributes,
-    att.cReferencing.attributes,
     empty
   }
 title =
