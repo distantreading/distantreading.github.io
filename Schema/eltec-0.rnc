@@ -6,7 +6,7 @@ namespace teix = "http://www.tei-c.org/ns/Examples"
 namespace xi = "http://www.w3.org/2001/XInclude"
 namespace xlink = "http://www.w3.org/1999/xlink"
 
-# Schema generated from ODD source 2018-05-15T16:53:25Z. .
+# Schema generated from ODD source 2018-05-17T21:23:21Z. .
 # TEI Edition: 
 # TEI Edition Location: http://www.tei-c.org/Vault/P5//
 #
@@ -714,10 +714,25 @@ change =
   element change {
     macro.specialPara,
     att.ascribed.attributes,
-    att.datable.attributes,
+    att.datable.w3c.attribute.notBefore,
+    att.datable.w3c.attribute.notAfter,
+    att.datable.w3c.attribute.from,
+    att.datable.w3c.attribute.to,
     att.docStatus.attributes,
     att.global.attributes,
     att.typed.attributes,
+    
+    ## supplies the value of the date or time in a standard form, e.g. yyyy-mm-dd.
+    attribute when {
+      xsd:date
+      | xsd:gYear
+      | xsd:gMonth
+      | xsd:gDay
+      | xsd:gYearMonth
+      | xsd:gMonthDay
+      | xsd:time
+      | xsd:dateTime
+    },
     
     ## points to one or more elements that belong to this change.
     attribute target {
