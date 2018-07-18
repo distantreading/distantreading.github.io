@@ -5,7 +5,7 @@
          xmlns:teix="http://www.tei-c.org/ns/Examples"
          datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes"
          ns="http://www.tei-c.org/ns/1.0"><!--
-Schema generated from ODD source 2018-07-07T20:03:12Z. .
+Schema generated from ODD source 2018-07-13T09:12:48Z. .
 TEI Edition: 
 TEI Edition Location: http://www.tei-c.org/Vault/P5//
   
@@ -146,7 +146,7 @@ TEI Edition Location: http://www.tei-c.org/Vault/P5//
       </optional>
    </define>
    <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
-            id="eltec-1-att.datable.w3c-att-datable-w3c-when-constraint-rule-1">
+            id="eltec-0-att.datable.w3c-att-datable-w3c-when-constraint-rule-1">
       <sch:rule xmlns:sch="http://purl.oclc.org/dsdl/schematron"
                 xmlns:rng="http://relaxng.org/ns/structure/1.0"
                 xmlns:e="http://distantreading.net/eltec/ns"
@@ -157,7 +157,7 @@ TEI Edition Location: http://www.tei-c.org/Vault/P5//
       </sch:rule>
    </pattern>
    <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
-            id="eltec-1-att.datable.w3c-att-datable-w3c-from-constraint-rule-2">
+            id="eltec-0-att.datable.w3c-att-datable-w3c-from-constraint-rule-2">
       <sch:rule xmlns:sch="http://purl.oclc.org/dsdl/schematron"
                 xmlns:rng="http://relaxng.org/ns/structure/1.0"
                 xmlns:e="http://distantreading.net/eltec/ns"
@@ -168,7 +168,7 @@ TEI Edition Location: http://www.tei-c.org/Vault/P5//
       </sch:rule>
    </pattern>
    <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
-            id="eltec-1-att.datable.w3c-att-datable-w3c-to-constraint-rule-3">
+            id="eltec-0-att.datable.w3c-att-datable-w3c-to-constraint-rule-3">
       <sch:rule xmlns:sch="http://purl.oclc.org/dsdl/schematron"
                 xmlns:rng="http://relaxng.org/ns/structure/1.0"
                 xmlns:e="http://distantreading.net/eltec/ns"
@@ -271,7 +271,7 @@ TEI Edition Location: http://www.tei-c.org/Vault/P5//
       </optional>
    </define>
    <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
-            id="eltec-1-att.typed-subtypeTyped-constraint-rule-4">
+            id="eltec-0-att.typed-subtypeTyped-constraint-rule-4">
       <sch:rule xmlns:sch="http://purl.oclc.org/dsdl/schematron"
                 xmlns:rng="http://relaxng.org/ns/structure/1.0"
                 xmlns:e="http://distantreading.net/eltec/ns"
@@ -370,66 +370,30 @@ TEI Edition Location: http://www.tei-c.org/Vault/P5//
    </define>
    <define name="model.emphLike">
       <choice>
-         <ref name="emph"/>
-         <ref name="foreign"/>
          <ref name="term"/>
-         <ref name="title"/>
       </choice>
    </define>
    <define name="model.emphLike_alternation">
       <choice>
-         <ref name="emph"/>
-         <ref name="foreign"/>
          <ref name="term"/>
-         <ref name="title"/>
       </choice>
    </define>
    <define name="model.emphLike_sequence">
-      <ref name="emph"/>
-      <ref name="foreign"/>
       <ref name="term"/>
-      <ref name="title"/>
    </define>
    <define name="model.emphLike_sequenceOptional">
       <optional>
-         <ref name="emph"/>
-      </optional>
-      <optional>
-         <ref name="foreign"/>
-      </optional>
-      <optional>
          <ref name="term"/>
-      </optional>
-      <optional>
-         <ref name="title"/>
       </optional>
    </define>
    <define name="model.emphLike_sequenceOptionalRepeatable">
       <zeroOrMore>
-         <ref name="emph"/>
-      </zeroOrMore>
-      <zeroOrMore>
-         <ref name="foreign"/>
-      </zeroOrMore>
-      <zeroOrMore>
          <ref name="term"/>
-      </zeroOrMore>
-      <zeroOrMore>
-         <ref name="title"/>
       </zeroOrMore>
    </define>
    <define name="model.emphLike_sequenceRepeatable">
       <oneOrMore>
-         <ref name="emph"/>
-      </oneOrMore>
-      <oneOrMore>
-         <ref name="foreign"/>
-      </oneOrMore>
-      <oneOrMore>
          <ref name="term"/>
-      </oneOrMore>
-      <oneOrMore>
-         <ref name="title"/>
       </oneOrMore>
    </define>
    <define name="model.highlighted">
@@ -555,32 +519,22 @@ TEI Edition Location: http://www.tei-c.org/Vault/P5//
       <notAllowed/>
    </define>
    <define name="model.pPart.transcriptional">
-      <choice>
-         <ref name="corr"/>
-      </choice>
+      <notAllowed/>
    </define>
    <define name="model.pPart.transcriptional_alternation">
-      <choice>
-         <ref name="corr"/>
-      </choice>
+      <notAllowed/>
    </define>
    <define name="model.pPart.transcriptional_sequence">
-      <ref name="corr"/>
+      <empty/>
    </define>
    <define name="model.pPart.transcriptional_sequenceOptional">
-      <optional>
-         <ref name="corr"/>
-      </optional>
+      <empty/>
    </define>
    <define name="model.pPart.transcriptional_sequenceOptionalRepeatable">
-      <zeroOrMore>
-         <ref name="corr"/>
-      </zeroOrMore>
+      <empty/>
    </define>
    <define name="model.pPart.transcriptional_sequenceRepeatable">
-      <oneOrMore>
-         <ref name="corr"/>
-      </oneOrMore>
+      <notAllowed/>
    </define>
    <define name="model.pPart.edit">
       <choice>
@@ -601,7 +555,6 @@ TEI Edition Location: http://www.tei-c.org/Vault/P5//
    </define>
    <define name="model.milestoneLike">
       <choice>
-         <ref name="milestone"/>
          <ref name="pb"/>
       </choice>
    </define>
@@ -725,9 +678,7 @@ TEI Edition Location: http://www.tei-c.org/Vault/P5//
       <notAllowed/>
    </define>
    <define name="model.noteLike">
-      <choice>
-         <ref name="note"/>
-      </choice>
+      <notAllowed/>
    </define>
    <define name="model.lLike">
       <choice>
@@ -804,9 +755,7 @@ TEI Edition Location: http://www.tei-c.org/Vault/P5//
       <notAllowed/>
    </define>
    <define name="model.global.edit">
-      <choice>
-         <ref name="gap"/>
-      </choice>
+      <notAllowed/>
    </define>
    <define name="model.divPart">
       <choice>
@@ -860,39 +809,23 @@ TEI Edition Location: http://www.tei-c.org/Vault/P5//
          <ref name="model.placeNamePart_sequenceRepeatable"/>
       </oneOrMore>
    </define>
-   <define name="model.certLike">
-      <notAllowed/>
-   </define>
-   <define name="model.descLike">
-      <notAllowed/>
-   </define>
    <define name="model.quoteLike">
-      <choice>
-         <ref name="quote"/>
-      </choice>
+      <notAllowed/>
    </define>
    <define name="model.quoteLike_alternation">
-      <choice>
-         <ref name="quote"/>
-      </choice>
+      <notAllowed/>
    </define>
    <define name="model.quoteLike_sequence">
-      <ref name="quote"/>
+      <empty/>
    </define>
    <define name="model.quoteLike_sequenceOptional">
-      <optional>
-         <ref name="quote"/>
-      </optional>
+      <empty/>
    </define>
    <define name="model.quoteLike_sequenceOptionalRepeatable">
-      <zeroOrMore>
-         <ref name="quote"/>
-      </zeroOrMore>
+      <empty/>
    </define>
    <define name="model.quoteLike_sequenceRepeatable">
-      <oneOrMore>
-         <ref name="quote"/>
-      </oneOrMore>
+      <notAllowed/>
    </define>
    <define name="model.qLike">
       <choice>
@@ -1225,9 +1158,14 @@ TEI Edition Location: http://www.tei-c.org/Vault/P5//
          <ref name="att.global.rendition.attribute.rend"/>
          <attribute name="n">
             <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(number) gives a number (or other label) for an element, which is not necessarily unique within the document.</a:documentation>
-            <data type="token">
-               <param name="pattern">(\p{L}|\p{N}|\p{P}|\p{S})+</param>
-            </data>
+            <choice>
+               <value>eltec-0</value>
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
+               <value>eltec-1</value>
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
+               <value>eltec-2</value>
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
+            </choice>
          </attribute>
          <empty/>
       </element>
@@ -1506,15 +1444,6 @@ TEI Edition Location: http://www.tei-c.org/Vault/P5//
          <empty/>
       </element>
    </define>
-   <define name="corr">
-      <element name="corr">
-         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(correction) contains the correct form of a passage apparently erroneous in the copy text. [3.4.1. Apparent Errors]</a:documentation>
-         <ref name="macro.paraContent"/>
-         <ref name="att.global.attributes"/>
-         <ref name="att.typed.attributes"/>
-         <empty/>
-      </element>
-   </define>
    <define name="div">
       <element name="div">
          <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(text division) contains a subdivision of the front, body, or back of a text. [4.1. Divisions of the Body]</a:documentation>
@@ -1573,7 +1502,7 @@ TEI Edition Location: http://www.tei-c.org/Vault/P5//
             </optional>
          </group>
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
-                  id="eltec-1-div-abstractModel-structure-l-constraint-report-4">
+                  id="eltec-0-div-abstractModel-structure-l-constraint-report-4">
             <rule context="tei:div">
                <report xmlns:rng="http://relaxng.org/ns/structure/1.0"
                        xmlns:e="http://distantreading.net/eltec/ns"
@@ -1584,7 +1513,7 @@ TEI Edition Location: http://www.tei-c.org/Vault/P5//
             </rule>
          </pattern>
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
-                  id="eltec-1-div-abstractModel-structure-p-constraint-report-5">
+                  id="eltec-0-div-abstractModel-structure-p-constraint-report-5">
             <rule context="tei:div">
                <report xmlns:rng="http://relaxng.org/ns/structure/1.0"
                        xmlns:e="http://distantreading.net/eltec/ns"
@@ -1603,22 +1532,6 @@ TEI Edition Location: http://www.tei-c.org/Vault/P5//
                </data>
             </attribute>
          </optional>
-         <empty/>
-      </element>
-   </define>
-   <define name="emph">
-      <element name="emph">
-         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(emphasized) marks words or phrases which are stressed or emphasized for linguistic or rhetorical effect. [3.3.2.2. Emphatic Words and Phrases 3.3.2. Emphasis, Foreign Words, and Unusual Language]</a:documentation>
-         <ref name="macro.paraContent"/>
-         <ref name="att.global.attributes"/>
-         <empty/>
-      </element>
-   </define>
-   <define name="foreign">
-      <element name="foreign">
-         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">identifies a word or phrase as belonging to some language other than that of the surrounding text. [3.3.2.1. Foreign Words or Expressions]</a:documentation>
-         <ref name="macro.phraseSeq"/>
-         <ref name="att.global.attributes"/>
          <empty/>
       </element>
    </define>
@@ -1676,63 +1589,6 @@ TEI Edition Location: http://www.tei-c.org/Vault/P5//
          <empty/>
       </element>
    </define>
-   <define name="gap">
-      <element name="gap">
-         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">indicates a point where material has been omitted in a transcription, whether for editorial reasons described in the TEI header, as part of sampling practice, or because the material is illegible, invisible, or inaudible. [3.4.3. Additions, Deletions, and Omissions]</a:documentation>
-         <zeroOrMore>
-            <choice>
-               <ref name="model.descLike"/>
-               <ref name="model.certLike"/>
-            </choice>
-         </zeroOrMore>
-         <ref name="att.global.attributes"/>
-         <optional>
-            <attribute name="reason">
-               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">gives the reason for omission
-Suggested values include: 1] cancelled; 2] deleted; 3] editorial; 4] illegible; 5] inaudible; 6] irrelevant; 7] sampling</a:documentation>
-               <list>
-                  <oneOrMore>
-                     <choice>
-                        <value>cancelled</value>
-                        <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
-                        <value>deleted</value>
-                        <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
-                        <value>editorial</value>
-                        <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">for features omitted from transcription due to editorial policy</a:documentation>
-                        <value>illegible</value>
-                        <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
-                        <value>inaudible</value>
-                        <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
-                        <value>irrelevant</value>
-                        <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
-                        <value>sampling</value>
-                        <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
-                        <data type="token">
-                           <param name="pattern">(\p{L}|\p{N}|\p{P}|\p{S})+</param>
-                        </data>
-                     </choice>
-                  </oneOrMore>
-               </list>
-            </attribute>
-         </optional>
-         <optional>
-            <attribute name="hand">
-               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">in the case of text omitted from the transcription because of deliberate deletion by an identifiable hand, indicates the hand which made the deletion.</a:documentation>
-               <data type="anyURI"/>
-            </attribute>
-         </optional>
-         <optional>
-            <attribute name="agent">
-               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">in the case of text omitted because of damage, categorizes the cause of the damage, if it can be identified.
-Sample values include: 1] rubbing; 2] mildew; 3] smoke</a:documentation>
-               <data type="token">
-                  <param name="pattern">(\p{L}|\p{N}|\p{P}|\p{S})+</param>
-               </data>
-            </attribute>
-         </optional>
-         <empty/>
-      </element>
-   </define>
    <define name="head">
       <element name="head">
          <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(heading) contains any type of heading, for example the title of a section, or the heading of a list, glossary, manuscript description, etc. [4.2.1. Headings and Trailers]</a:documentation>
@@ -1772,7 +1628,7 @@ Sample values include: 1] rubbing; 2] mildew; 3] smoke</a:documentation>
             </choice>
          </zeroOrMore>
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
-                  id="eltec-1-l-abstractModel-structure-l-constraint-report-6">
+                  id="eltec-0-l-abstractModel-structure-l-constraint-report-6">
             <rule context="tei:l">
                <report xmlns:rng="http://relaxng.org/ns/structure/1.0"
                        xmlns:e="http://distantreading.net/eltec/ns"
@@ -1786,50 +1642,12 @@ Sample values include: 1] rubbing; 2] mildew; 3] smoke</a:documentation>
          <empty/>
       </element>
    </define>
-   <define name="milestone">
-      <element name="milestone">
-         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">marks a boundary point separating any kind of section of a text, typically but not necessarily indicating a point at which some part of a standard reference system changes, where the change is not represented by a structural element. [3.10.3. Milestone
-Elements]</a:documentation>
-         <empty/>
-         <ref name="att.global.attributes"/>
-         <ref name="att.typed.attributes"/>
-         <empty/>
-      </element>
-   </define>
-   <define name="note">
-      <element name="note">
-         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">contains a note or annotation. [3.8.1. Notes and Simple Annotation 2.2.6. The Notes Statement 3.11.2.8. Notes and Statement of Language 9.3.5.4. Notes within Entries]</a:documentation>
-         <ref name="macro.specialPara"/>
-         <ref name="att.global.attributes"/>
-         <ref name="att.pointing.attributes"/>
-         <ref name="att.typed.attributes"/>
-         <optional>
-            <attribute xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"
-                       name="anchored"
-                       a:defaultValue="true">
-               <a:documentation>indicates whether the copy text shows the exact place of reference for the note.</a:documentation>
-               <data type="boolean"/>
-            </attribute>
-         </optional>
-         <optional>
-            <attribute name="targetEnd">
-               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">points to the end of the span to which the note is attached, if the note is not embedded in the text at that point.</a:documentation>
-               <list>
-                  <oneOrMore>
-                     <data type="anyURI"/>
-                  </oneOrMore>
-               </list>
-            </attribute>
-         </optional>
-         <empty/>
-      </element>
-   </define>
    <define name="p">
       <element name="p">
          <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(paragraph) marks paragraphs in prose. [3.1. Paragraphs 7.2.5. Speech Contents]</a:documentation>
          <ref name="macro.paraContent"/>
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
-                  id="eltec-1-p-abstractModel-p-constraint-report-7">
+                  id="eltec-0-p-abstractModel-p-constraint-report-7">
             <rule context="tei:p">
                <report xmlns:rng="http://relaxng.org/ns/structure/1.0"
                        xmlns:e="http://distantreading.net/eltec/ns"
@@ -1840,7 +1658,7 @@ Elements]</a:documentation>
             </rule>
          </pattern>
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
-                  id="eltec-1-p-abstractModel-structure-l-constraint-report-8">
+                  id="eltec-0-p-abstractModel-structure-l-constraint-report-8">
             <rule context="tei:p">
                <report xmlns:rng="http://relaxng.org/ns/structure/1.0"
                        xmlns:e="http://distantreading.net/eltec/ns"
@@ -1859,15 +1677,6 @@ Elements]</a:documentation>
          <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(page beginning) marks the beginning of a new page in a paginated document. [3.10.3. Milestone
 Elements]</a:documentation>
          <empty/>
-         <ref name="att.global.attributes"/>
-         <ref name="att.typed.attributes"/>
-         <empty/>
-      </element>
-   </define>
-   <define name="quote">
-      <element name="quote">
-         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(quotation) contains a phrase or passage attributed by the narrator or author to some agency external to the text. [3.3.3. Quotation 4.3.1. Grouped Texts]</a:documentation>
-         <ref name="macro.specialPara"/>
          <ref name="att.global.attributes"/>
          <ref name="att.typed.attributes"/>
          <empty/>
@@ -2093,7 +1902,7 @@ Measures]</a:documentation>
          <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(reference) defines a reference to another location, possibly modified by additional text or comment. [3.6. Simple Links and Cross-References 16.1. Links]</a:documentation>
          <ref name="macro.paraContent"/>
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
-                  id="eltec-1-ref-refAtts-constraint-report-9">
+                  id="eltec-0-ref-refAtts-constraint-report-9">
             <rule context="tei:ref">
                <report xmlns:rng="http://relaxng.org/ns/structure/1.0"
                        xmlns:e="http://distantreading.net/eltec/ns"
@@ -2119,7 +1928,7 @@ Measures]</a:documentation>
             </choice>
          </optional>
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
-                  id="eltec-1-relatedItem-targetorcontent1-constraint-report-10">
+                  id="eltec-0-relatedItem-targetorcontent1-constraint-report-10">
             <rule context="tei:relatedItem">
                <sch:report xmlns:sch="http://purl.oclc.org/dsdl/schematron"
                            xmlns:rng="http://relaxng.org/ns/structure/1.0"
@@ -2132,7 +1941,7 @@ relatedItem element must be empty</sch:report>
             </rule>
          </pattern>
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
-                  id="eltec-1-relatedItem-targetorcontent1-constraint-assert-2">
+                  id="eltec-0-relatedItem-targetorcontent1-constraint-assert-2">
             <rule context="tei:relatedItem">
                <sch:assert xmlns:sch="http://purl.oclc.org/dsdl/schematron"
                            xmlns:rng="http://relaxng.org/ns/structure/1.0"
@@ -2185,9 +1994,6 @@ relatedItem element must be empty</sch:report>
                   </oneOrMore>
                </group>
             </choice>
-            <zeroOrMore>
-               <ref name="note"/>
-            </zeroOrMore>
          </group>
          <ref name="att.global.attributes"/>
          <empty/>
@@ -2209,7 +2015,7 @@ relatedItem element must be empty</sch:report>
          <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">contains a title for any kind of work. [3.11.2.2. Titles, Authors, and Editors 2.2.1. The Title Statement 2.2.5. The Series Statement]</a:documentation>
          <ref name="macro.paraContent"/>
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
-                  id="eltec-1-title-noEmptyTitle-constraint-assert-3">
+                  id="eltec-0-title-noEmptyTitle-constraint-assert-3">
             <rule context="tei:title">
                <assert xmlns:rng="http://relaxng.org/ns/structure/1.0"
                        xmlns:e="http://distantreading.net/eltec/ns"
