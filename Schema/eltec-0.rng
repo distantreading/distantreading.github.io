@@ -5,7 +5,7 @@
          xmlns:teix="http://www.tei-c.org/ns/Examples"
          datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes"
          ns="http://www.tei-c.org/ns/1.0"><!--
-Schema generated from ODD source 2018-07-25T16:13:53Z. .
+Schema generated from ODD source 2018-07-26T15:42:05Z. .
 TEI Edition: 
 TEI Edition Location: http://www.tei-c.org/Vault/P5//
   
@@ -2148,7 +2148,7 @@ relatedItem element must be empty</sch:report>
             <choice>
                <value>high</value>
                <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">text has been republished very frequently since its original appearance</a:documentation>
-               <value>high</value>
+               <value>medium</value>
                <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">text has been republished occasionally since its original appearance</a:documentation>
                <value>low</value>
                <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">text has not been reprinted since its original appearance</a:documentation>
