@@ -12,7 +12,7 @@
             </publicationStmt>
             <sourceDesc>
                 <ab>Original XML available from <ptr
-                        target="http://github.com/distantreading/WG1/"/></ab>
+                        target="http://distantreading.girhub.io/Talks/wg1-report-antwerp.xml"/></ab>
             </sourceDesc>
         </fileDesc>
         <revisionDesc>
@@ -22,21 +22,111 @@
     <text>
         <body>
             <div type="slide">
-                <head>Work Group 1: r</head>
-                <p> The TEI header was designed with two goals in mind <list>
-                        <item> needs of bibliographers and librarians trying to document
-                                <soCalled>electronic books</soCalled></item>
-                        <item> needs of text analysts trying to document <soCalled>coding
-                                practices</soCalled> within digital resources</item>
+                <head>Whose behind Work Group 1 ?</head>
+                <p>The WG1 Troika: <list>
+                        <item>Carolin Odebrecht (Humboldt University): lead</item>
+                        <item>Borja Navarro Colorado (University of Alicante)</item>
+                        <item>Lou Burnard (no fixed abode)</item>
+                    </list></p>
+                <p>The WG1 mailing list: provides lots of input from WG1 members and discussants
+                    (wg1@distant-reading.whatever : sign up today!)</p>
+            </div>
+            <div type="slide">
+                <head>WG1 was charged with ... </head>
+                <list>
+                    <item>coordination, building and publication of the ELTeC</item>
+                    <item>providing advice to partners concerning the structuring of ELTeC
+                        subcollections</item>
+                    <item> in particular as regards encoding, linguistic annotation and
+                        metadata</item>
+                </list>
 
-                    </list> The result is that discussion of the header tends to be pulled in two
-                    directions... </p>
-        </div>
-            <div type="slide"><p>Like this
-        <egXML xmlns="http://www.tei-c.org/ns/Examples"><bounce><p>This train is very bouncy</p></bounce></egXML></p>    </div>
-       
- 
+                <p>We divided this into three tasks: <list>
+                        <item>defining selection criteria</item>
+                        <item>developing guidelines for data and metadata</item>
+                        <item>creating a workflow for corpus preparation</item>
+                    </list>
+                </p>
+            </div>
+            <div type="slide">
+                <head>WG1 Proposals </head>
+                <p>Out initial proposals were presented at the WG1 meeting in Prague, February 2018 <list>
+                        <item><ptr target="http://distantreading.github.io/sampling_proposal.html"
+                            /></item>
+                        <item><ptr target="http://distantreading.github.io/encoding_proposal.html"
+                            /></item>
+                        <item><ptr target="http://distantreading.github.io/workflow_proposal.html"
+                            /></item>
+                    </list>
+                </p>
+                <p>They have been reviewed in several ways: <list>
+                        <item>specific proposals/corrections raised via Github</item>
+                        <item>substantial review of sampling issues by WG3</item>
+                        <item>extensive testing of encoding proposals in practice </item>
+                    </list></p>
+            </div>
+            <div type="slide">
+                <head>Current issues</head>
+                <list>
+                    <item>Sampling procedure : theory vs practice</item>
+                    <item>Encoding scheme : optionality vs predictability </item>
+                    <item>Workflow process : currently under test!</item>
+                </list>
+            </div>
+            <div type="slide">
+                <head>Sampling</head>
+                <p>Following suggestion of WG3, we divided the proposals document into two papers,
+                    one defining the selection criteria we recommend and the other discussing the
+                    theory behind this process. </p>
+                <p>Recommendations (in summary): <list>
+                        <item>aim to represent variety not population, for each of four criteria: </item>
+                        <item>size of work</item>
+                        <item>date of creation</item>
+                        <item>sex of author</item>
+                        <item>endurance ("canonicity") of work</item>
+                    </list></p>
 
+            </div>
+            <div type="slide">
+                <head>Encoding scheme</head>
+                <p>Following discussion in Prague, we defined three <soCalled>levels</soCalled> of
+                    encoding; TEI schemas exist for eltec-0 and eltec-1. Level 2 proposals will be
+                    determined by the outcomes of this meeting!</p>
+                <p>We produced a preliminary <ref
+                        target="https://distantreading.github.io/Training/index.html">set of
+                        training materials</ref> for a two day Workshop held in Wuerzburg in April.
+                    A dozen participants were taken through the process of converting a PDF file to
+                    a fully marked up ELTEc text, using Abbyy fine reader and oXygen. </p>
+            </div>
+            <div type="slide">
+                <head>Workflow</head>
+                <p>We first tested our proposals using a sample of texts contributed by volunteers
+                    in a variety of formats and languages, which were all converted to ELTeC (with
+                    varying degrees of difficulty). The results are still available as 
+                    <ref target="https://github.com/distantreading/WG1/tree/master/Sampler">the ELTeC
+                    Sampler</ref> (12 texts)</p>
+                <p>We defined a procedure for individual researchers to upload their texts to
+                    identically structured repositories on Github, one per language: 
+                    <ptr target="https://github.com/distantreading/WG1/wiki/Versioning-Guidelines-for-ELTeC"/></p>
+                <p>The process of validating texts and uploading them has begun! See <ptr
+                    target="https://github.com/COST-ELTeC"/> for the current state of affairs.` </p>
+            </div>
+            <div type="slide">
+                <head>Outstanding issues/controversies</head>
+                <list>
+                    <item>How tightly constrained, and how structured should the metadata be? <list>
+                            <item><gi>title</gi> in <gi>titleStmt</gi> vs in sourceDoc</item>
+                            <item>substructure for <gi>author</gi>?</item>
+                            <item>representation of <q>pedigree</q> in <gi>sourceDoc</gi></item>
+                        </list></item>
+                    <item>What features should be captured as a minimum? <list>
+                            <item>Page breaks in level zero? </item>
+                            <item>Punctuation distinctions: hyphen vs emdash, curly vs straight
+                                quotes</item>
+                        </list></item>
+                    <item>Who is responsible for quality control ? </item>
+                 </list>
+            </div>
         </body>
     </text>
 </TEI>

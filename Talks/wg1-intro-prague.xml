@@ -14,9 +14,11 @@
         
         <body><div>
            
-            <p>Working Group 1 – Scholarly Resources</p><p> COST Action Distant Reading</p><p> WG 1 expert
+            <head>Working Group 1 – Scholarly Resources</head>
+            <p> COST Action Distant Reading</p><p> WG 1 expert
                 meeting 2018-02-13 Prague
-            </p></div>
+            </p>
+        <p><graphic url="../media/COSTlogo.png"/></p></div>
             <div type="slide">
                 <head>Welcome to our first WG meeting!</head>
             </div>
@@ -31,6 +33,7 @@
 -->
             <div type="slide">
                 <head><!--<img src="introduction_slides-5_1.png"/>--> Agenda</head>
+                <p><graphic url="../media/prague-agenda.png"/></p>
                 <p>Important issue: Do you have any recommendations for dinner?</p>
             </div><div type="slide">
                 <head>Organisation and Communication</head><list><item>Documentation of
