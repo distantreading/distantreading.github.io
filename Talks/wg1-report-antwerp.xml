@@ -22,26 +22,37 @@
     <text>
         <body>
             <div type="slide">
-                <head>Whose behind Work Group 1 ?</head>
+                <head>What is Work Group 1 for?</head>
+
+                <p rend="box"> The aim of this COST Action is to "develop the resources and methods
+                    necessary to change the way European literary history is written." (MOU,
+                    p.2)</p>
+
+                <p>An important part of that goal is to create a big collection of literature from
+                    1850-1920 which can be used to benchmark different computational distant-reading
+                    methods for corpus annotation and analysis: we call this the <hi>European
+                        Literary Text Collection (ELTeC)</hi></p>
+                <p>WG1 was charged with ... </p>
+                <list>
+                    <item>coordination, construction, and publication of the ELTeC</item>
+                    <item>providing advice to partners concerning the structuring of ELTeC
+                        subcollections</item>
+                    <item>in particular as regards encoding, linguistic annotation and
+                        metadata</item>
+                </list>
+            </div>
+            <div type="slide">
+                <head>Who's behind Work Group 1 ?</head>
                 <p>The WG1 Troika: <list>
                         <item>Carolin Odebrecht (Humboldt University): lead</item>
                         <item>Borja Navarro Colorado (University of Alicante)</item>
                         <item>Lou Burnard (no fixed abode)</item>
                     </list></p>
                 <p>The WG1 mailing list: provides lots of input from WG1 members and discussants
-                    (wg1@distant-reading.whatever : sign up today!)</p>
-            </div>
-            <div type="slide">
-                <head>WG1 was charged with ... </head>
-                <list>
-                    <item>coordination, building and publication of the ELTeC</item>
-                    <item>providing advice to partners concerning the structuring of ELTeC
-                        subcollections</item>
-                    <item> in particular as regards encoding, linguistic annotation and
-                        metadata</item>
-                </list>
+                    (wg1@distant-reading.net: sign up today!)</p>
+           
 
-                <p>We divided this into three tasks: <list>
+                <p>We divided the work into three tasks: <list>
                         <item>defining selection criteria</item>
                         <item>developing guidelines for data and metadata</item>
                         <item>creating a workflow for corpus preparation</item>
@@ -75,9 +86,14 @@
             </div>
             <div type="slide">
                 <head>Sampling</head>
-                <p>Following suggestion of WG3, we divided the proposals document into two papers,
-                    one defining the selection criteria we recommend and the other discussing the
-                    theory behind this process. </p>
+                <p>Following a suggestion from WG3, we divided the proposals document into two
+                    papers, <list>
+                        <item><ptr target="http://distantreading.github.io/sampling_proposal.html"/>
+                            itemizes the selection criteria we recommend</item>
+                        <item><ptr target="http://distantreading.github.io/canonicity_proposal.html"
+                            /> discusses the theory behind this process</item>
+                    </list>
+                </p>
                 <p>Recommendations (in summary): <list>
                         <item>aim to represent variety not population, for each of four criteria: </item>
                         <item>size of work</item>
@@ -92,6 +108,10 @@
                 <p>Following discussion in Prague, we defined three <soCalled>levels</soCalled> of
                     encoding; TEI schemas exist for eltec-0 and eltec-1. Level 2 proposals will be
                     determined by the outcomes of this meeting!</p>
+                <p>The schemas are defined using the TEI ODD system which enables us to generate
+                    comprehensive documentation (see e.g. <ptr
+                        target="https://distantreading.github.io/Schema/eltec-0.html"/>) : work is
+                    ongoing on customizing this. </p>
                 <p>We produced a preliminary <ref
                         target="https://distantreading.github.io/Training/index.html">set of
                         training materials</ref> for a two day Workshop held in Wuerzburg in April.
@@ -102,14 +122,16 @@
                 <head>Workflow</head>
                 <p>We first tested our proposals using a sample of texts contributed by volunteers
                     in a variety of formats and languages, which were all converted to ELTeC (with
-                    varying degrees of difficulty). The results are still available as 
-                    <ref target="https://github.com/distantreading/WG1/tree/master/Sampler">the ELTeC
-                    Sampler</ref> (12 texts)</p>
+                    varying degrees of difficulty). The results are still available as <ref
+                        target="https://github.com/distantreading/WG1/tree/master/Sampler">the ELTeC
+                        Sampler</ref> (12 texts)</p>
                 <p>We defined a procedure for individual researchers to upload their texts to
-                    identically structured repositories on Github, one per language: 
-                    <ptr target="https://github.com/distantreading/WG1/wiki/Versioning-Guidelines-for-ELTeC"/></p>
+                    identically structured repositories on Github, one per language: <ptr
+                        target="https://github.com/distantreading/WG1/wiki/Versioning-Guidelines-for-ELTeC"
+                    /></p>
                 <p>The process of validating texts and uploading them has begun! See <ptr
-                    target="https://github.com/COST-ELTeC"/> for the current state of affairs.` </p>
+                        target="https://github.com/COST-ELTeC"/> for the current state of affairs.`
+                </p>
             </div>
             <div type="slide">
                 <head>Outstanding issues/controversies</head>
@@ -125,7 +147,7 @@
                                 quotes</item>
                         </list></item>
                     <item>Who is responsible for quality control ? </item>
-                 </list>
+                </list>
             </div>
         </body>
     </text>
