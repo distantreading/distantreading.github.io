@@ -27,7 +27,7 @@ body {
 }
          
 
-div.egXML {
+div.egXML, div.egXML_valid {
     clear:both;
     margin-top:1em;
     margin-bottom:1em;

@@ -1,0 +1,366 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+   <teiHeader>
+      <fileDesc>
+         <titleStmt>
+            <title>WG1: Encoding Proposals</title>
+            <author>Lou Burnard</author>
+         </titleStmt>
+         <publicationStmt>
+            <p>For presentation at WG1 meeting, Praha 2018-02-14</p>
+         </publicationStmt>
+         <sourceDesc>
+            <p>Information about the source</p>
+         </sourceDesc>
+      </fileDesc>
+   </teiHeader>
+   <text>
+      <body>
+         <div type="slide">
+            <head>Who am I?</head>
+            <p rend="box">I am Lou Burnard, now on my third or fourth life.</p>
+            <list type="ordered">
+<item>I was born on the same day as the poet John Milton, but approx 300 years later. I studied at Oxford University, with
+a masters in English Studies, specialising in 19th century literature in 1971</item>
+               <item>After which I taught World Literature in the University of Malawi for a couple of years</item>
+               <item>For about 25 years I worked at Oxford University Computing Services, initially as a data centre operator, eventually as
+               Assistant Director</item><item>I started the Oxford Text Archive in 1976; the Text Encoding Initiative in 1987; 
+                  the British National Corpus in 1994; </item><item>In 2010 I took early retirement from OUCS and started work as a freelance</item>
+               <item>Between 2009 and 2012 I worked closely with the TGE Adonis which eventually became HumaNum, the French digital humanities
+                  infrastructure </item>
+            </list>
+            <p>Look me up on Google if you get bored during the rest of this talk... </p>
+         </div><div type="slide">
+            <head>Proposed Encoding Guidelines for the ELTeC</head>
+            <p> A discussion document setting out the full proposal is available <ref
+                  target="https://distantreading.github.io/encoding_proposal.html">here</ref>
+            </p>
+            <p> We summarize the proposals as follows: </p>
+            <list>
+               <item>Use TEI XML : a well-established, customizable, scholarly standard </item>
+               <item>Capture a <hi rend="sc">guaranteed minimum</hi> of features for each text: <list>
+                     <item>significant structural features (chapters, headings, paragraphs...) </item>
+                     <item>descriptive metadata (bibliographic and non bibliographic)</item>
+                  </list>
+               </item>
+               <item>The proposal raises a number of <label rend="sc">open questions</label> as to
+                     <emph>which</emph> features should be captured</item>
+               <item>The proposal defines an <label rend="sc">XML schema</label> and a set of rules
+                  which can be used to validate converted texts (more or less) automatically</item>
+            </list>
+         </div>
+         <div type="slide">
+            <head>What sort of <soCalled>guaranteed minimum</soCalled>?</head>
+            <p rend="box">The focus is <emph>not</emph> to represent texts in all their original
+               complexity of structure or appearance, but rather to facilitate a richer and
+               better-informed distant reading than a transcription of its lexical content alone
+               would permit. </p>
+            <p>For example, <list>
+                  <item>to distinguish headings and annotations from the rest of the text</item>
+                  <item>to be able to locate stretches of text within gross structural features such
+                     as chapters and paragraphs</item>
+                  <item>to distinguish narrative voices (?)</item>
+               </list></p>
+         </div>
+         <div type="slide">
+            <head>Why XML-TEI?</head>
+            <p>Why not just use plain text?</p>
+            <list>
+               <item>By using an XML based format, we ensure that<list>
+                     <item>ELTeC texts can be validated </item>
+                     <item>ELTeC texts can be converted to other formats using simple
+                        widely-available technologies </item>
+                     <item>ELTeC texts can be enriched with additional more sophisticated
+                        annotations</item>
+                  </list>
+               </item>
+               <item>By using TEI, we can take advantage of tools and techniques, widely used across
+                  the research community likely to be interested in the ELTeC </item>
+               <item>NB Using the TEI does <emph>not</emph> mean our encoding will represent every
+                  possible textual feature or metadatum ... on the contrary! </item>
+            </list>
+         </div>
+         <div type="slide">
+            <head>Taming the TEI</head>
+            <figure rend="center">
+               <graphic url="media/occam.jpg" height="40%" style="float:center"/>
+            </figure>
+            <list>
+               <item><p>The TEI offers a choice of over 450 different elements ... we will use (and
+                     our schema will only permit) about thirty. </p></item>
+               <item>
+                  <p>The TEI is very flexible in the structures and perspectives it supports. We
+                     will apply Occam's razor extensively. </p></item>
+            </list>
+         </div>
+         <div type="slide">
+            <head>Basic structure of an ELTeC text</head>
+            <figure>
+               <graphic url="media/example-1.png" height="60%" style="float:center"/>
+            </figure>
+            <p rend="box">Goal : represent only what is essential to an understanding of the
+               text</p>
+         </div>
+         <div type="slide">
+            <head>What are the <q>essential</q> components of a novel?</head>
+            <p>It seems uncontroversial to distinguish in our markup chapters, headings, paragraphs
+               but how about :</p>
+            <list>
+               <item>title page ?</item>
+               <item>preface or introduction ?</item>
+               <item>table of contents ?</item>
+               <item>appendix or afterword ?</item>
+               <item>footnotes or comments ?</item>
+               <item>errata lists ?</item>
+            </list>
+            <p>It's not hard to find TEI tags for these: but is it helpful? can we be consistent in
+               their application ? </p>
+         </div>
+         <div type="slide">
+            <head>TEI encoding typically loses typographic subtleties </head>
+            <figure>
+               <graphic url="media/forster-chap2.png" height="80%"/>
+            </figure>
+            <cb/>
+            <list style="float:left">
+               <head style="italic">Are we bothered?</head>
+               <item>the chapter title is centred</item>
+               <item>there are linebreaks within the paragraphs (and sometimes words get hyphenated
+                  as a result)</item>
+               <item>the first word is capitalised</item>
+               <item>paragraphs are indented (except for the first)</item>
+               <item>dash and quote marks have narrative function</item>
+               <item>hyphens may or may not be significant</item>
+               <item>double quotes and single quotes have different functions</item>
+            </list>
+         </div>
+         <div type="slide" rend="incremental">
+            <head>Which typographic features should we keep ?</head>
+            <figure style="text-align:center">
+               <graphic url="media/howards-chap1-1970.png" width="60%"/>
+               <head>(Penguin, 1970)</head>
+            </figure>
+            <figure style="float:right">
+               <graphic url="media/howards-chap1-1921.png"/>
+               <head>(Knopf, 1921)</head>
+            </figure>
+            <figure>
+               <graphic url="media/howards-chap1-1991.png"/>
+               <head>(Everyman, 1991)</head>
+            </figure>
+            <figure style="text-align:center">
+               <graphic url="media/howards-chap1-1910.png" width="80%"/>
+               <head>(First US ed, 1910)</head>
+            </figure>
+         </div>
+         <div type="slide">
+            <head>What about material other than running prose and dialogue ?</head>
+            <p>Novels often contain material other than running prose</p>
+            <p>We could: </p>
+            <list type="ordered">
+               <item>use the appropriate TEI elements for verse or drama (<gi>lg</gi>, <gi>l</gi>,
+                     <gi>sp</gi>, <gi>stage</gi>)</item>
+               <item>use the appropriate TEI elements for lists and tables (<gi>list</gi>,
+                     <gi>label</gi>, <gi>item</gi>, <gi>table</gi>, <gi>cell</gi>,
+                  <gi>row</gi>)</item>
+               <item>use the appropriate TEI elements for graphics (<gi>figure</gi>,
+                     <gi>graphic</gi>, <gi>head</gi>)</item>
+            </list>
+            <p>Or we could <list>
+                  <item>suppress non-prose material, replacing it by <gi>gap</gi></item>
+                  <item>lie </item>
+               </list></p>
+            <p rend="italic">Whichever we choose to do, we must be consistent!</p>
+         </div>
+         <div type="slide">
+            <head>An example</head>
+            <figure>
+               <graphic url="media/paulVirg-p127.png"/>
+            </figure>
+            <cb/>
+            <p>Should this be encoded as: <egXML xmlns="http://www.tei-c.org/ns/Examples">
+<p><label>le vieillard.</label> 
+« Oh mon ami ! ne m’avez-vous pas dit que vous
+ n’aviez pas de naissance ?</p></egXML> or (expensively) <egXML
+                  xmlns="http://www.tei-c.org/ns/Examples">
+<sp><speaker>le vieillard.</speaker><p>« Oh mon ami ! ne m’avez-vous pas dit que
+vous n’aviez pas de naissance ?</p></sp></egXML> or (deceitfully) <egXML
+                  xmlns="http://www.tei-c.org/ns/Examples">
+<p>le vieillard.</p>
+<p>« Oh mon ami ! ne m’avez-vous pas dit que
+vous n’aviez pas de naissance ?</p></egXML>
+            </p>
+         </div>
+         <div type="slide">
+            <head>Another example</head>
+            <figure>
+               <graphic url="media/howards-page61.png" />
+            </figure>
+            <p>Should this be encoded as: <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                  <p> Even in her photographic days she had relied upon her smile and her figure to
+                     attract, and now that she was <quote><l>"On the shelf,</l>
+                        <l>On the shelf,</l>
+                        <l>Boys, boys, I'm on the shelf,"</l>
+                     </quote> she was not likely to find her tongue.  Occasional bursts of song (of
+                     which the above is an example) still issued from her lips, but the spoken word
+                     was rare. </p></egXML> or (deceitfully) <egXML
+                  xmlns="http://www.tei-c.org/ns/Examples">
+                  <p>... and now that she was</p>
+                  <p>"On the shelf,
+                     <lb/>On the shelf,
+                     <lb/>Boys, boys, I'm on the shelf,"</p>
+                  <p>she was not likely to find her tongue.  Occasional ...</p>
+               </egXML>
+            </p>
+         </div>
+         <div type="slide">
+            <head>Some other open questions</head>
+            <list>
+               <item>should we capture page breaks in our source edition?</item>
+               <item>should we remove/resolve end of line hyphenation? </item>
+               <item>should we try to interpret typographic variation (italics, etc.) e.g. as
+                     <gi>title</gi>
+                  <gi>emph</gi>
+                  <gi>foreign</gi>
+                  <gi>abbr</gi>?</item>
+               <item>should we capture (using <gi>hi</gi>) typographic features (and if so should we
+                  use <att>rend</att> or <att>style</att>... </item>
+               <item>or should we just ignore them ?</item>
+            </list>
+            <p rend="box">Again, consistency of practice is essential. Whether we decide to drop or
+               to preserve these features, we must do so for every text. </p>
+         </div>
+         <div type="slide">
+            <head>Metadata : the TEI Header</head>
+            <figure>
+               <graphic url="media/teiHeader.png"/>
+            </figure>
+            <!-- <egXML xmlns="http://www.tei-c.org/ns/Examples">
+               <teiHeader type="novelHeader">
+                  <fileDesc>
+                     <titleStmt>
+                        <title><!-\- standard title of work -\->
+                        </title>
+                        <author>
+                           <!-\- information about the author -\->
+                        </author>
+                     </titleStmt>
+                     <extent>
+                        <!-\- size of the text, in pages and words -\->
+                     </extent>
+                     <publicationStmt>
+                        <!-\- boilerplate statement about status as part of ELTeC -\->
+                     </publicationStmt>
+                     <sourceDesc>
+                        <bibl>
+                           <!-\- bibliographic description of the printed source -\->
+                        </bibl>
+                     </sourceDesc>
+                  </fileDesc>
+                  <profileDesc>
+                     <!-\- additional descriptive information -\->
+                  </profileDesc>
+                  <revisionDesc>
+                     <!-\- revision information -\->
+                  </revisionDesc>
+               </teiHeader>
+            </egXML>       -->
+            <p>We propose using this for all metadata. It will provide for each text <list>
+                  <item>bibliographic information</item>
+                  <item>sampling and descriptive criteria applicable</item>
+                  <item>housekeeping information</item>
+               </list></p>
+            <p>The schema will check consistency of data supplied. </p>
+         </div>
+         <div type="slide">
+            <head>A possible title statement</head>
+            <p>We may need to modify the TEI definitions</p>
+            <egXML xmlns="http://www.tei-c.org/ns/Examples">
+               <titleStmt>
+                  <title>Howards End : ELTeC edition</title>
+                  <author dates="1879 1970" sex="M">
+                     <persName>
+                        <forename>Edward</forename>
+                        <forename>Morgan</forename>
+                        <surname>Forster</surname>
+                     </persName>
+                     <persName>E.M. Forster</persName>
+                     <idno type="viaf">https://viaf.org/viaf/31996364</idno>
+                     <idno type="wiki">https://www.wikidata.org/wiki/Q189119</idno>
+                  </author>
+                  <respStmt>
+                     <resp>ELTeC encoding</resp>
+                     <name>Lou Burnard</name>
+                  </respStmt>
+               </titleStmt>
+            </egXML>
+         </div>
+         <div type="slide">
+            <head>An example source description</head>
+            <egXML xmlns="http://www.tei-c.org/ns/Examples">
+               <sourceDesc>
+                  <bibl>
+                     <author>E.M. Forster</author>
+                     <title>Howards End</title>
+                     <pubPlace>London</pubPlace>
+                     <publisher>Edward Arnold</publisher>
+                     <date>1910</date>
+                     <idno type="wiki">https://www.wikidata.org/wiki/Q1146642</idno>
+                  </bibl>
+                  <bibl>
+                     <title>The Project Gutenberg Etext of Howards End, by E. M. Forster</title>
+                     <ref target="http://www.gutenberg.org/files/2891/2891-h/2891-h.htm">HTML
+                        version downloaded on <date>2017-12-26</date></ref>
+                  </bibl>
+                  <note type="editions" source="worldcat"> Worldcat lists 484 print editions in
+                     English</note>
+               </sourceDesc>
+            </egXML>
+         </div>
+         <div type="slide">
+            <head>And finally... profile and revision descriptions</head>
+            <egXML xmlns="http://www.tei-c.org/ns/Examples">
+               <profileDesc>
+                  <langUsage>
+                     <language ident="en-BR" usage="99">British English</language>
+                     <language ident="de" usage="1">German</language>
+                  </langUsage>
+                  <textClass>
+                     <keywords source="http://wikidata.org">
+                        <term>social class</term>
+                        <term>social convention</term>
+                        <term>modernity</term>
+                        <term>family drama</term>
+                     </keywords>
+                     <catRef target="#author_m #reprint_3"/>
+                     <classCode scheme="UDC">8231.111</classCode>
+                  </textClass>
+               </profileDesc>
+            </egXML>
+            <p>The values supplied by <att>target</att> are defined in a project-wide
+                  <gi>taxonomy</gi>; this and other project-wide metadata is held in a separate
+               corpus header.</p>
+            <egXML xmlns="http://www.tei-c.org/ns/Examples">
+               <revisionDesc>
+                  <change when="2018-02-11" who="LB">Added to EN collection</change>
+               </revisionDesc>
+            </egXML>
+            <p>Just one small question... </p>
+         </div>
+         <div type="slide">
+            <head>How do we get there from here?</head>
+            <list>
+               <item>some, but by no means all, the titles we would like to include may already be
+                  available in digital form</item>
+               <item>we can automatically (more or less) convert from other TEI vocabs, HTML, ePub,
+                  text to our target encoding </item>
+               <item>(this may involve <emph>removing</emph> markup!) </item>
+               <item>we need to investigate effectiveness of OCR for other materials</item>
+               <item>syntactic validation of the result can be automated</item>
+               <item>... but determining whether or not we are correctly representing a specific text is another matter
+                  </item>
+            </list>
+         </div>
+      </body>
+   </text>
+</TEI>

@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="file:/home/lou/Public/TEIslides/teislides.rnc" type="application/relax-ng-compact-syntax"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+    <teiHeader>
+        <fileDesc>
+            <titleStmt>
+                <title>WG1 Introduction (from Prague)</title>
+            </titleStmt>
+            <publicationStmt><p>Presented as ingtroduction in Prague</p></publicationStmt>
+            <sourceDesc><p>Reverse engineered from Carolin's PDF</p></sourceDesc>
+        </fileDesc>
+    </teiHeader>
+    <text>
+        
+        <body><div>
+           
+            <p>Working Group 1 – Scholarly Resources</p><p> COST Action Distant Reading</p><p> WG 1 expert
+                meeting 2018-02-13 Prague
+            </p></div>
+            <div type="slide">
+                <head>Welcome to our first WG meeting!</head>
+            </div>
+            <!--div type="slide">
+<head>1 
+    <a href="introduction_slidess.html#4">Organisation and Communication</a><br/>
+2 <a href="introduction_slidess.html#8">Goal of this Working Group 1 Scholarly Resources</a><br/>
+</div><div type="slide">
+<head>Outline<br/>
+1 <a href="introduction_slidess.html#4">Organisation and Communication</a><br/>
+2 <a href="introduction_slidess.html#8">Goal of this Working Group 1 Scholarly Resources</a><br/>
+-->
+            <div type="slide">
+                <head><!--<img src="introduction_slides-5_1.png"/>--> Agenda</head>
+                <p>Important issue: Do you have any recommendations for dinner?</p>
+            </div><div type="slide">
+                <head>Organisation and Communication</head><list><item>Documentation of
+                    decisions</item><item>Creation, access and storage of proposals, white papers
+                        etc.</item><item>Report problems, questions
+                        </item></list>
+            </div><div type="slide">
+                <head>Organisation and Communication</head><list><item>Action Website (work in
+                    progress)</item><item>Wiki for self-organization (work in
+                        progress)</item><item>Twitter account distant readers</item><item>etherpads for note
+                            taking: recommendation: framapad https://framapad.org/,</item><item>seafile
+                                installation (drop box alternative), gitHub for creating ELTeC / zenodo for
+                                archiving ELTeC</item><item>github repo:
+                                    https://github.com/distantreading</item></list></div>
+            <!--div type="slide">
+<head>Outline<br/>
+1 <a href="introduction_slidess.html#4">Organisation and Communication</a><br/>
+2 <a href="introduction_slidess.html#8">Goal of this Working Group 1 Scholarly Resources</a><br/>
+
+
+</div>--><div
+                type="slide">
+                <head>Goal</head>
+                <p rend="box"> This Action will develop the resources and methods necessary to change the
+                    way European literary history is written. (MOU, p.2)</p>
+            </div><div type="slide">
+                <head>Goal</head>
+                <p>A goal is to create a big benchmark corpus of literature from 1850-1920 (first period)
+                    for different computational distant reading methods for corpus annotation and analysis.
+                    <hi>European Literary Text Collection (ELTeC)</hi></p>
+            </div><div type="slide">
+                <head>WG Tasks</head><list><item>coordinate building and publishing the
+                    ELTeC</item><item>advise partners in structuring the subcollections, including
+                        linguistic annotation and metadata collection</item></list>
+            </div><div type="slide">
+                <head>WG Meetings</head>
+                <p>discussion of<list><item>
+                    structure</item><item>content</item><item>data</item><item>annotation</item><item>metadata</item></list>
+                    for the ELTeC </p>
+            </div><div type="slide">
+                <head>Defining our tasks for this meeting</head>
+                <list><item> Defining selection criteria</item><item>Developing guidelines for data and
+                    metadata</item><item>Creating a workflow for corpus preparation</item></list>
+            </div>
+        </body>
+        
+    </text>
+</TEI>

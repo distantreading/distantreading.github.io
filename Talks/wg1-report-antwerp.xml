@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="file:/home/lou/Public/TEIslides/teislides.rnc" type="application/relax-ng-compact-syntax"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+    <teiHeader>
+        <fileDesc>
+            <titleStmt>
+                <title>WG1 : the story so far</title>
+                <author>Lou Burnard Consulting</author>
+            </titleStmt>
+            <publicationStmt>
+                <p>For Antwerp</p>
+            </publicationStmt>
+            <sourceDesc>
+                <ab>Original XML available from <ptr
+                        target="http://github.com/distantreading/WG1/"/></ab>
+            </sourceDesc>
+        </fileDesc>
+        <revisionDesc>
+            <change when="2018-10-07">Create header</change>
+        </revisionDesc>
+    </teiHeader>
+    <text>
+        <body>
+            <div type="slide">
+                <head>Work Group 1: r</head>
+                <p> The TEI header was designed with two goals in mind <list>
+                        <item> needs of bibliographers and librarians trying to document
+                                <soCalled>electronic books</soCalled></item>
+                        <item> needs of text analysts trying to document <soCalled>coding
+                                practices</soCalled> within digital resources</item>
+
+                    </list> The result is that discussion of the header tends to be pulled in two
+                    directions... </p>
+        </div>
+            <div type="slide"><p>Like this
+        <egXML xmlns="http://www.tei-c.org/ns/Examples"><bounce><p>This train is very bouncy</p></bounce></egXML></p>    </div>
+       
+ 
+
+        </body>
+    </text>
+</TEI>
