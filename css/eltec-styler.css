@@ -7,24 +7,16 @@ body{
 }
 
 
-
-
 table.balance {
     margin: 4cm;
     border:solid black 1pt;  
 }
 
 table.balance td {
-    margin: 4em;
+    padding:2mm;
     border:solid black 1pt;  
 }
 
-
-tr.header td {
-    font-size: larger;
-    background-color:yellow;
-    column-span: all;
-}
 
 tr.label {
     background-color:#e6e6e6;
@@ -36,3 +28,6 @@ td.label {
     font-size:larger;   
 }
 
+.red{
+        color:#ff0000;
+}
