@@ -6,13 +6,33 @@ body{
     font-family:Verdana, Tahoma, Geneva, Arial, Helvetica, sans-serif;
 }
 
-table.balance tr{
+
+
+
+table.balance {
     margin: 4cm;
-    border:solid black 1pt;
+    border:solid black 1pt;  
+}
+
+table.balance td {
+    margin: 4em;
+    border:solid black 1pt;  
+}
+
+
+tr.header td {
+    font-size: larger;
+    background-color:yellow;
+    column-span: all;
 }
 
 tr.label {
-    background-color:gray;
-    font-size:larger;
-    
+    background-color:#e6e6e6;
+    font-size:larger;   
 }
+
+td.label {
+    background-color:#e6e6e6;
+    font-size:larger;   
+}
+
