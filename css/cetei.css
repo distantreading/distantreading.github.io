@@ -143,7 +143,10 @@ tei-lb::before {
 tei-hi[rend=bold] {
   font-weight: bold;
 }
-tei-hi[rend=italic] {
+tei-hi {
+  font-style: italic;
+}
+tei-foreign {
   font-style: italic;
 }
 tei-emph {
