@@ -1,3 +1,7 @@
+## ELTeC
+
+- [current state of text collection](https://distantreading.github.io/ELTeC/index.html) includes links to visualisations of each available text
+
 ## WG1 Discussion drafts
 
 - [on the wiki](https://github.com/distantreading/WG1/wiki)
