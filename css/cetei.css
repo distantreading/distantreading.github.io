@@ -14,7 +14,7 @@ img {
 }
 
 tei-publicationStmt:after {
-    content: 'ELTeC is a scholary resource created in the context of COST ACTION Distant Reading (https://www.distant-reading.net/)';
+    content: 'ELTeC is a scholarly resource created in the context of COST ACTION Distant Reading (https://www.distant-reading.net/)';
     font-size: 10pt;
     margin-bottom: 50px;
 }
