@@ -21,6 +21,14 @@ th, td {
   padding: 2mm;
 }
 
+thead tr > td {
+    text-align: center;
+}
+
+thead {
+    background-color:#e6e6e6;
+    font-size:larger;   
+}
 
 
 td.sep {
@@ -31,6 +39,11 @@ td.sep {
 
 
 td.lang {
+    background-color:#e6e6e6;
+    font-size:larger;   
+    text-align:left;
+}
+td.label {
     background-color:#e6e6e6;
     font-size:larger;   
     text-align:left;
