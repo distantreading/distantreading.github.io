@@ -23,7 +23,7 @@
 - [Encoding Slides](https://distantreading.github.io/encoding_slides.html) 
 - [Workflow Slides](https://distantreading.github.io/workflow_slides.pdf) 
 
-- [Notes on discussions](https://mensuel.framapad.org/p/distantReadingWG1-2018-02)
+- [Notes on discussions](https://distantreading.github.io/framapad.md)
 
 You can add files here in TEI, Markdown, or PDF
 TEI files will be rendered using [CETEIcean](https://github.com/TEIC/CETEIcean). 
