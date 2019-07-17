@@ -120,6 +120,8 @@ tei-bibl > tei-date:after{
 tei-head {
     display: block;
 }
+
+
 /* h1 */
 tei-div > tei-head {
     font-size: 11pt;
@@ -127,6 +129,11 @@ tei-div > tei-head {
     color: #00487D;
     background-color: #FFFFFF;
 }
+
+tei-div[@type='abstract'] {
+    font-style: italic;
+}
+
 tei-p {
     display: block;
     margin-top: .5em;
