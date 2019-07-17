@@ -20,7 +20,7 @@ tei-publicationStmt:after {
 }
 
 
-tei-teiheader {
+tei-teiHeader {
     display: block;
     width: 600px;
     padding: 30px;
@@ -29,7 +29,7 @@ tei-teiheader {
 
 }
 
-tei-teiheader tei-titlestmt > tei-title {
+tei-teiHeader tei-titleStmt > tei-title {
     display: block;
     font-size: 16pt;
     font-style:italic; 
@@ -39,7 +39,7 @@ tei-teiheader tei-titlestmt > tei-title {
     margin-bottom: .5em;
 }
 
-tei-filedesc > tei-titlestmt {
+tei-fileDesc > tei-titleStmt {
     font-size: 10pt;
 }
 
@@ -69,26 +69,26 @@ tei-respStmt:before {
 }
 
 
-tei-filedesc > tei-publicationstmt {
+tei-fileDesc > tei-publicationStmt {
     display: block;
 }
 
-tei-teiheader tei-sourcedesc {
+tei-teiHeader tei-sourceDesc {
     display: block;
 }
-tei-teiheader tei-sourcedesc:before {
+tei-teiHeader tei-sourceDesc:before {
     content: 'Source(s):';
     font-weight: bold;
 }
-tei-header tei-langUsage {
+tei-teiHeader tei-langUsage {
     display: block;
 }
-tei-teiheader tei-langUsage:before {
+tei-teiHeader tei-langUsage:before {
     content: 'Language(s):';
     font-weight: bold;
 }
 
-tei-teiheader > tei-revisiondesc {
+tei-teiHeader > tei-revisionDesc {
     display: none;
 }
 
