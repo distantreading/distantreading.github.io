@@ -14,7 +14,7 @@ img {
 }
 
 tei-publicationStmt:after {
-    content: 'ELTeC is a scholarly resource created in the context of COST ACTION Distant Reading (https://www.distant-reading.net/)';
+    content: 'ELTeC is a scholarly resource created in the context of COST Action CA16204 “Distant Reading for European Literary History" (https://www.distant-reading.net/)';
     font-size: 10pt;
     margin-bottom: 50px;
 }
@@ -39,7 +39,12 @@ tei-teiHeader tei-titleStmt > tei-title {
     margin-bottom: .5em;
 }
 
-tei-fileDesc > tei-titleStmt {
+/*tei-fileDesc > tei-titleStmt {
+    font-size: 10pt;
+}*/
+
+tei-titleStmt {
+    display: block;
     font-size: 10pt;
 }
 
@@ -184,6 +189,19 @@ tei-figure {
     display: block;
     text-align: center;
 }
+
+tei-note:before {
+    content: "   (NOTE: ";
+}
+
+tei-note:after {
+    content:") ";
+}
+
+tei-note {
+    font-style:italic;
+}
+
 tei-code {
     font-family: "Noto Mono", Monaco, "Courier New", Courier, monospace;
     background-color: #EEE;
