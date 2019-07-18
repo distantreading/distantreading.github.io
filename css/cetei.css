@@ -3,7 +3,7 @@
 body {
     color: #000000;
     font-family: "Noto Sans", Verdana, Tahoma, Geneva, Arial, Helvetica, sans-serif;
-    font-size: 0.8em;
+    font-size: 0.9em;
     line-height: 1.6em;
     margin: 1em;
 }
@@ -125,6 +125,8 @@ tei-bibl > tei-date:after{
 tei-head {
     display: block;
 }
+
+
 /* h1 */
 tei-div > tei-head {
     font-size: 11pt;
@@ -132,6 +134,9 @@ tei-div > tei-head {
     color: #00487D;
     background-color: #FFFFFF;
 }
+
+
+
 tei-p {
     display: block;
     margin-top: .5em;
