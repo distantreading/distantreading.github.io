@@ -17,7 +17,7 @@
 - [Workflow Proposals](https://distantreading.github.io/workflow_proposal.html); also as  [printablePDF](https://distantreading.github.io/workflow_proposal.pdf) last updated 2019-02-01
 
 
-## [Training Schools](https://distantreading.github.io/Training/) 
+## Training Schools
 
 - [Wurzburg](https://distantreading.github.io/Training/training.html) 
  „Optical Character Recognition and Text Encoding for the production of ELTeC“ (University of Würzburg, 16-17 April, 2018)
