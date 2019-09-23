@@ -1,0 +1,45 @@
+
+body {
+    color: blue;
+}
+
+h1.sub {
+    font-size: 1em
+}
+
+h2 {
+    color: #0066cc;
+}
+
+div.figure {
+    border: none    
+}
+
+li.item em {
+    color: red
+}
+
+li.item li {
+    font-style: normal
+}
+
+table tr td {
+    padding-left: 5px;
+}
+
+.element {
+    font-weight: bold
+}
+
+div.pre.egXML_valid {
+    border-top: 3px solid #0066cc;
+    border-bottom: 3px solid #0066cc;
+    border-left: 2px solid #0066cc;
+    border-right: 2px solid #0066cc;
+    background: #e6f2ff;
+}
+
+.figDesc{
+    font-size: 0.65em;
+    
+}
