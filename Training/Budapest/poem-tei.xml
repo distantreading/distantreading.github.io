@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="application/xml"
+	schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+   <teiHeader>
+      <fileDesc>
+         <titleStmt>
+            <title>Sonnet No. 18</title>
+            <author>William Shakespeare</author>
+         </titleStmt>
+         <publicationStmt>
+            <p>Published in the course of the Budapest training school <date>2019-09-23</date></p>
+         </publicationStmt>
+         <sourceDesc>
+            <p>Information about the source</p>
+         </sourceDesc>
+      </fileDesc>
+   </teiHeader>
+   <text>
+      <body>
+         <div type="verse">
+            <head>William Shakespeare's Sonnet No. 18.</head>
+               <lg type="quatrain">
+                  <l>Shall I compare thee to a Summer's <rhyme label="a">day</rhyme>?</l>
+                  <l>Thou art more louely and more <rhyme label="b">temperate</rhyme>:</l>
+                  <l>Rough windes do shake the darling buds of <rhyme label="a">Maie</rhyme>,</l>
+                  <l>And Sommers lease hath all too short a <rhyme label="b">date</rhyme>:</l>
+               </lg>
+               <lg type="quatrain">
+                  <l>Sometime too hot the eye of heauen <rhyme label="c">shines</rhyme>,</l>
+                  <l>And often is his gold complexion <rhyme label="d">dimm'd</rhyme>,</l>
+                  <l>And euery faire from faire some-time <rhyme label="c">declines</rhyme>,</l>
+                  <l>By chance, or nature's changing course, <rhyme label="d">vntrimm’d</rhyme>:</l>
+               </lg>
+               <lg type="quatrain">
+                  <l>But thy eternall Sommer shall not <rhyme label="e">fade</rhyme>,</l>
+                  <l>Nor loose possession of that faire thou <rhyme label="f">ow'st</rhyme>;</l>
+                  <l>Nor shall death brag thou wander'st in his <rhyme label="e">shade</rhyme>,</l>
+                  <l>When in eternall lines to time thou <rhyme label="f">grow'st</rhyme>,</l>
+               </lg>
+               <lg type="couplet">
+                  <l>So long as men can breathe or eyes can <rhyme label="g">see</rhyme>,</l>
+                  <l>So long liues this, and this giues life to <rhyme label="g">thee</rhyme>,</l>
+               </lg>
+         </div>
+      </body>
+   </text>
+</TEI>

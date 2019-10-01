@@ -1,0 +1,842 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="application/xml"
+	schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+   <teiHeader>
+      <fileDesc>
+         <titleStmt>
+            <title>An Introduction to Markup, XML, and TEI</title>
+            <author>
+               <name>Martina Scholger</name>
+               <affiliation>Centre for Information Modelling - Austrian Centre for Digital
+                  Humanities, University of Graz</affiliation>
+            </author>
+
+         </titleStmt>
+         <publicationStmt>
+            <p>Publication Information</p>
+         </publicationStmt>
+         <sourceDesc>
+            <p>Prepared for Budapest Training School</p>
+         </sourceDesc>
+
+      </fileDesc>
+      <revisionDesc>
+         <change when="2019-09-15">MS first draft</change>
+         <change when="2019-09-23">Final version for workshop</change>
+         <change when="2019-10-01">Minor changes on encoding, references, typos</change>
+      </revisionDesc>
+   </teiHeader>
+   <text>
+      <body>
+
+         <div type="slide">
+            <head>Sahle's text wheel</head>
+            <figure>
+               <graphic url="media/textwheel.png"></graphic>
+            </figure>
+            <p><ref target="https://www.i-d-e.de/">© IDE</ref></p>
+         </div>
+
+         <div type="slide">
+            <head>Where is the text?</head>
+            <list>
+               <item>In the shape of letters and their <emph>layout</emph>?</item>
+               <item>In the <emph>original</emph> form which the copy derives?</item>
+               <item>In the <emph>stories</emph> we read into it? The author‘s intention?</item>
+            </list>
+            <list>
+               <item>A <emph>document</emph> is an objects that exists in the world, can be
+                  digitized.</item>
+               <item>A <emph>text</emph> is an abstraction, created for a community of readers which we can <emph>markup</emph>.</item>
+               <item>We can markup (encode, annotate) <emph>multiple perspectives</emph> on a text in one TEI document.
+               </item>
+            </list>
+            <figure>
+               <graphic width="900px" url="media/TEIallformats.jpg"/>
+            </figure>
+         </div>
+
+         <div type="slide">
+            <head>From print to ELTeC edition</head>
+            <figure>
+               <graphic width="300px" url="media/clementine.jpg"/>
+               <graphic width="700px" url="media/clementine-eltec.jpg"/>
+               <figDesc>Left: Fanny Lewald, Clementine; Right: <ref
+                     target="https://distantreading.github.io/ELTeC/deu/deu001.html">Fanny Lewald,
+                     ELTeC edition</ref></figDesc>
+            </figure>
+         </div>
+
+         <div type="slide">
+            <head>What is this?</head>
+            <lg>
+               <l>Lennä, lennä, leppäkerttu,</l>
+               <l>ison kiven juureen.</l>
+               <l>Lennä leikkikedon kautta</l>
+               <l>unipuuhuun suureen.</l>
+            </lg>
+            <lg>
+               <l>Kulta-kultalehden alla</l>
+               <l>äiti puuron keittää.</l>
+               <l>Unituutu leppäkertun</l>
+               <l>lämpimästi peittää.</l>
+            </lg>
+            <lg>
+               <l>Laula, laula, unilintu,</l>
+               <l>tuosku, tuomenterttu.</l>
+               <l>Nuku, punapaitulainen,</l>
+               <l>pikku leppäkerttu.</l>
+            </lg>
+         </div>
+
+         <div type="slide">
+            <head>What does markup do?</head>
+            <list>
+               <item>With the help of markup languages, structures, meanings and knowledge is
+                  technically highlighted.</item>
+               <item>Markup makes explict to a machine what is implicit to a person.</item>
+               <item>Markup is readable, processable and reusable for humans <hi rend="italic"
+                     >and</hi> machines.</item>
+               <item>Markup allows to re-use and present the material in <emph>different output
+                     formats</emph>, for <emph>different contexts</emph> and <emph>different user
+                     groups</emph>.</item>
+               <item>Markup is used in many different fields, for many different purposes.</item>
+            </list>
+         </div>
+
+         <div type="slide">
+            <head>Types of markup</head>
+            <list>
+               <item>Procedural markup <list>
+                     <item>provides instructions for programs</item>
+                  </list>
+                  <egXML xmlns="http://www.tei-c.org/ns/Examples"> RED INK ON; print "Fanny Lewald"; RED INK OFF </egXML>
+               </item>
+               <item>Presentational markup <list>
+                     <item>deals with the layout of a text</item>
+                  </list>
+                  <egXML xmlns="http://www.tei-c.org/ns/Examples"> \textcolor{red}{Fanny Lewald}
+                  </egXML>
+               </item>
+               <item>Descriptive markup <list>
+                     <item>deals with the semantics of a text</item>
+                  </list>
+                  <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                     <persName>
+                        <forename>Fanny</forename>
+                        <surname>Lewald</surname>
+                     </persName>
+                  </egXML>
+               </item>
+            </list>
+         </div>
+
+         <div type="slide">
+            <head>Descriptive markup</head>
+            <list>
+               <item>It is usually more useful to mark up what things represent rather than what they look
+                  like.</item>
+               <item>Using descriptive markup enables us to make explicit the distinctions we want
+                  to make when processing a string of characters.</item>
+               <item>It gives us a way of naming, characterising, and annotating textual data in a
+                  formalised way and recording this for re-use.</item>
+            </list>
+         </div>
+         
+         <div type="slide">
+            <head>Markup as a scholarly activity</head>
+            <list>
+               <item>The application of markup to a document is not an automatic process. </item>
+               <item>The editor has to decide what markup to apply, and how this represents the original.</item>
+               <item>Markup means interpretation.</item>
+               <item>Markup can assist in answering research questions.</item>
+               <item>Needs ressources.</item>
+            </list>
+         </div>
+
+         <div type="slide">
+            <head>Separation of form and content</head>
+            <list>
+               <item>Presentational markup cares more about fonts and layout than meaning.</item>
+               <item>Descriptive markup says what things are, and leaves the rendition of them for a separate step.</item>
+               <item>Separating the form of something from its content makes it much easier to re-use.</item> 
+               <item>It also allows easy changes of presentation across a large number of documents.</item>
+               <item>Separation of representation and presentation -- <emph>Single-Source-Principle</emph>.</item>
+            </list>
+         </div>
+         
+         <div type="slide">
+            <head>Separation of form and content</head>
+            <figure>
+               <graphic width="700px" url="media/letter.jpg"></graphic>
+            </figure>
+            <p rend="small">Example from Letters 1916 (<ref target="http://letters1916.maynoothuniversity.ie/item/1261">http://letters1916.maynoothuniversity.ie/item/1261</ref>)</p>
+         </div>
+
+         <div type="slide">
+            <head>XML – Extensible Markup Language</head>
+            <list>
+               <item>W3C standard since 1998.</item>
+               <item>XML is an <emph>extensible markup language</emph> for structuring and organizing information.</item>
+               <item>XML is a <emph>metalanguage</emph> for defining domain-specific XML vocabularies.</item>
+            </list>
+
+            <figure>
+               <graphic url="media/xmlstandards.svg"/>
+            </figure>
+         </div>
+         
+         <div type="slide">
+            <head>XML representation</head>
+            <figure>
+               <graphic url="media/xml_structures.png"></graphic>
+            </figure>
+            <p><ref target="https://www.wwp.northeastern.edu/">© Woman Writers Project</ref></p>
+         </div>
+         
+         <div type="slide">
+            <head>XML elements</head>
+            <list>
+               <item>Each text element has a corresponding start-tag and end-tag. </item>
+               <item>The element’s content is surrounded by the corresponding tags: </item>
+               <figure>
+                  <graphic width="500px" url="media/element.png"></graphic>
+               </figure>
+               <item>Empty elements (= without content) are closed straight away: <egXML
+                     xmlns="http://www.tei-c.org/ns/Examples"><element/></egXML>
+               </item>
+            </list>
+         </div>
+
+         <div type="slide">
+            <head>XML attributes</head>
+            <list>
+               <item>Provide additional information about an element or its content. </item>
+               <item>An element may not contain the same attribute name twice. </item>
+               <item>Attribute name/value-pairs are supplied on the start-tag and may be given in any order, separated by spaces:</item>
+               <item><egXML xmlns="http://www.tei-c.org/ns/Examples"><element attribute="value">content</element></egXML></item>
+               <item>
+                  <egXML xmlns="http://www.tei-c.org/ns/Examples"><name type="person">Fanny Lewald</name></egXML>
+               </item>
+            </list>
+         </div>
+
+         <div type="slide">
+            <head>More details on XML</head>
+            <list>
+               <item>XML <emph>is</emph> structured data</item>
+               <item>XML <emph>is</emph> extensible</item>
+               <item>XML <emph>is</emph> expressed in plain text</item>
+               <item>XML <emph>must be</emph> well-formed</item>
+               <item>XML <emph>can be</emph> validated against a model</item>
+               <item>XML <emph>is</emph> application-, platform- and vendor- independant</item>
+               <item>XML <emph>is</emph> human and machine readable</item>
+               <item>XML <emph>is</emph> used for the data exchange</item>
+            </list>
+         </div>
+
+         <div type="slide">
+            <head>Well-formed XML documents</head>
+            <list>
+               <item>A single root element contains the whole of an XML document.</item>
+               <item>Element/attribute names are case sensitive.</item>
+               <item>Everything is properly delimited.</item>
+               <item>The characters &lt; (&amp;lt;) and &amp; (&amp;amp;) must always be "escaped" if you want to use them in the text.</item>
+               <item>Each subtree is properly nested within the root node and produce no overlap.</item>
+               <item>Well-formed:               
+               <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                  <![CDATA[
+<lg type="stanza">
+   <l>Lennä, lennä, leppäkerttu,</l>
+   <l>ison kiven juureen.</l>
+   <l>Lennä leikkikedon kautta</l>
+   <l>unipuuhuun suureen.</l>
+</lg>
+                  ]]>  
+               </egXML>
+               </item>
+               <item>Not well-formed:
+                  <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                     <![CDATA[
+<lg type="stanza">
+   <l><s>Lennä, lennä, leppäkerttu,</l>
+   <l>ison kiven juureen.</s></l>
+   <l><s>Lennä leikkikedon kautta</l>
+   <l>unipuuhuun suureen.</s></l>
+</lg>
+                  ]]>
+                  </egXML>
+               </item>
+            </list>
+         </div>
+     
+     <div type="slide">
+        <head>XML Terminology</head>
+        <figure>
+           <graphic url="media/xmlTerminology.png"></graphic>
+        </figure>
+        <p>© James Cummings</p>
+     </div>
+
+         <div type="slide">
+            <head>Test yourself!</head>
+            <head type="sub">Which of the following examples are well-formed?</head>
+            <egXML xmlns="http://www.tei-c.org/ns/Examples"> &lt;name>Fanny Lewald&lt;/name> </egXML>
+            <egXML xmlns="http://www.tei-c.org/ns/Examples">
+&lt;persName>&lt;forename>Fanny&lt;/forename>&lt;surname>Lewald&lt;/surname>&lt;/persName> </egXML>
+            <egXML xmlns="http://www.tei-c.org/ns/Examples">
+&lt;persName>&lt;forename>Fanny&lt;surname>&lt;/forename>Lewald&lt;/surname>&lt;/persName> </egXML>
+            <egXML xmlns="http://www.tei-c.org/ns/Examples"> 
+&lt;name type="person">Fanny Lewald&lt;/name> </egXML>
+         </div>
+       
+         <div type="slide">
+            <head>Test yourself!</head>
+            <head type="sub">Which of the following examples are well-formed?</head>
+            <egXML xmlns="http://www.tei-c.org/ns/Examples"> &lt;name type=person>Fanny Lewald&lt;/name> </egXML>
+            <egXML xmlns="http://www.tei-c.org/ns/Examples"> &lt;name type="person">Fanny Lewald&lt;/Name> </egXML>
+            <egXML xmlns="http://www.tei-c.org/ns/Examples"> &lt;1name type="person">Fanny Lewald&lt;/1name> </egXML>
+            <egXML xmlns="http://www.tei-c.org/ns/Examples"> &lt;name>Fanny Lewald&lt;person/>&lt;/name> </egXML>
+            <egXML xmlns="http://www.tei-c.org/ns/Examples"> &lt;name type="person" type="writer">Fanny Lewald&lt;/name> </egXML>     
+         </div>
+         
+         <div type="slide">
+            <head>Validity means</head>
+            <list>
+               <item>Correct vocabulary: all elements and attributes  exist in that
+            language.</item>
+               <item>Correct grammar: elements are used in the right place, in the right order.</item>
+            </list>
+         </div>
+
+         <div type="slide">
+            <head>Namespaces</head>
+            <list>
+               <item>A namespace is a label, declared with URL syntax, used to identify a group of
+                  XML element names and distinguish them from others.</item>
+               <item>An XML document can include elements from many different namespaces.</item>
+               <item>All TEI documents show that by default their component elements belong to the
+                  TEI namespace by beginning with the following declaration: <egXML
+                     xmlns="http://www.tei-c.org/ns/Examples">&lt;TEI xmlns="http://www.tei-c.org/ns/1.0"> ... &lt;/TEI>
+                  </egXML>
+               </item>
+               <item> The xml namespace is also used by the TEI for global attributes <code>@xml:id</code> and
+                  <code>@xml:lang</code>. </item>
+            </list>
+         </div>
+
+         <div type="slide">
+            <head>Exercise 1</head>
+            <figure>
+               <graphic url="media/sonnet18.jpg"/>
+               <figDesc>Shakespeare's Sonnet 18</figDesc>
+            </figure>
+         </div>
+
+         <div type="slide">
+            <head>oXygen XML Editor</head>
+            <list>
+               <item>Launch the oXygen XML editor</item>
+               <item>If you haven't installed oXygen yet <list>
+                     <item>Go to http://www.oxygenxml.com</item>
+                     <item>Download and install</item>
+                     <item>Request free 30-day trial version</item>
+                  </list>
+               </item>
+            </list>
+         </div>
+
+         <div type="slide">
+            <head>Exercise 1: Mark up a poem in XML</head>
+            <list>
+               <item>Step 1: Start a new XML document <list>
+                     <item>From the ’File’ menu select ’New’ and click on ’New Document’ select
+                        ’XML-Document’</item>
+                     <item>This should open up a blank document containing an XML Declaration</item>
+                     <item><egXML xmlns="http://www.tei-c.org/ns/Examples">&lt;?xml version="1.0" encoding="UTF-8"?></egXML></item>
+                  </list>
+               </item>
+               <item>Step 2: Create a division <list>
+                     <item>Below the XML declaration type <code>&lt;div></code></item>
+                     <item>Categorise the <code>&lt;div></code> as a 'verse', using the <code>@type</code> attribute </item>
+                     <item>Add a <code>&lt;head></code> element inside the <code>&lt;div></code> with the heading 'Sonnet No. 18.'.</item>
+                     <item><egXML xmlns="http://www.tei-c.org/ns/Examples">
+                           <div type="verse">
+                              <head>Sonnet No. 18</head>
+                              <!-- We will add the sonnet here -->
+                           </div>
+                        </egXML>
+                     </item>
+                  </list>
+               </item>
+            </list>
+         </div>
+
+         <div type="slide">
+            <head>Exercise 1: Mark up a poem in XML</head>
+            <list>
+               <item>Step 3: Insert <ref target="sonnet18.txt">plain text</ref> into the
+                  editor</item>
+               <item>Step 4: Mark up the stanzas (<code>&lt;lg></code>), lines (<code>&lt;l></code>) <egXML
+                     xmlns="http://www.tei-c.org/ns/Examples">
+                  <lg>
+                     <l>Shall I compare thee to a Summer's day?</l>
+                     <l>Thou art more louely and more temperate:</l>
+                     <l>Rough windes do shake the darling buds of Maie,</l>
+                     <l>And Sommers lease hath all too short a date:</l>
+                  </lg>
+               </egXML>
+               </item>
+               <item>Step 5: Add a <code>@type</code> attribute to the stanzas to distinguish between 'quatrain'
+                  and 'couplet' groups.</item>
+               <item>Step 6: Check if your document is well-formed</item>
+               <item><ref target="sonnet.xml">Completed example</ref></item>
+               <item><ref target="poems.xml">Example with two poems</ref></item>
+            </list>
+         </div>
+
+         <div type="slide">
+            <head>Useful shortcuts in oXygen</head>
+            <table rend="border">
+               <row>
+                  <cell><hi rend="bold">Mac</hi></cell>
+                  <cell><hi rend="bold">PC</hi></cell>
+                  <cell><hi rend="bold">Description</hi></cell>
+               </row>
+               <row>
+                  <cell>Command + N</cell>
+                  <cell>CTRL + N</cell>
+                  <cell>open a new document</cell>
+               </row>
+               <row>
+                  <cell>Command + S</cell>
+                  <cell>CTRL + S</cell>
+                  <cell>save document</cell>
+               </row>
+               <row>
+                  <cell>Command + E</cell>
+                  <cell>CTRL + E</cell>
+                  <cell>encloses selected content in a tag</cell>
+               </row>
+               <row>
+                  <cell>Command + Shift + Comma</cell>
+                  <cell>CTRL + Shift + Comma</cell>
+                  <cell>surrounds selected content in a comment</cell>
+               </row>
+               <row>
+                  <cell>Command + Shift + P</cell>
+                  <cell>CTRL + Shift + P</cell>
+                  <cell>formats the document (pretty code)</cell>
+               </row>
+               <row>
+                  <cell>Command + Shift + V</cell>
+                  <cell>CTRL + Shift + V</cell>
+                  <cell>validates your document</cell>
+               </row>
+               <row>
+                  <cell>Command + Shift + W</cell>
+                  <cell>CTRL + Shift + W</cell>
+                  <cell>checks if your document is well-formed</cell>
+               </row>
+            </table>
+         </div>
+         
+         <div type="slide">
+            <head>What kind of document can the TEI cope with?</head>
+            <list>
+               <item>The TEI takes a generalistic approach and should be able to cope with texts <list>
+                  <item>… of any size</item>
+                  <item>… language</item>
+                  <item>… complexity</item>
+                  <item>… on all media</item>
+                  <item>… from every time and place</item>
+               </list>
+               </item>
+            </list>
+            <p>books, journals, manuscripts, letters, rolls of papyrus, coins, notebooks, postcards,
+               inscription tablets, web pages, etc. </p>
+         </div>
+         
+         <div type="slide">
+            <head>Dramatic text</head>
+            <figure>
+               <graphic width="650px" url="media/dramaticText.jpg"/>
+               <figDesc><ref target="https://firstfolio.bodleian.ox.ac.uk/downloads.html"
+                  >Shakespeare's First Folio, The Tragedie of Hamlet</ref></figDesc>
+            </figure>
+         </div>
+         
+         <div type="slide">
+            <head>Diaries and letters</head>
+            <figure>
+               <graphic width="700px" url="media/diary-letter.jpg"/>
+               <figDesc>Left: <ref target="http://godwindiary.bodleian.ox.ac.uk/index2.html">William
+                  Godwin's Diary</ref>; Right: Letter from Richard Quiney to William
+                  Shakespeare</figDesc>
+            </figure>
+         </div>
+         
+         <div type="slide">
+            <head>Dictionaries</head>
+            <figure>
+               <graphic width="600px" url="media/dictionary.jpg"/>
+               <figDesc>Oxford English Dictionary</figDesc>
+            </figure>
+         </div>
+         
+         <div type="slide">
+            <head>Medieval calendar and account books</head>
+            <figure>
+               <graphic width="650px" url="media/calendar-accounts.jpg"/>
+               <figDesc>Left: record of daily menu of a monastery; Right: <ref
+                  target="https://gams.uni-graz.at/srbas">Account books of Basel</ref></figDesc>
+            </figure>
+         </div>
+         
+         <div type="slide">
+            <head>Medieval manuscripts (witnesses)</head>
+            <figure>
+               <graphic width="650px" url="media/witnesses.jpg"/>
+               <figDesc><ref target="https://www.confessio.ie/#">Saint Patrick's
+                  Confessio</ref></figDesc>
+            </figure>
+         </div>
+         
+         <div type="slide">
+            <head>Inscriptions (squeeze) and seals</head>
+            <figure>
+               <graphic width="700px" url="media/inscription_seal.jpg"/>
+               <figDesc>Left: <ref target="http://gams.uni-graz.at/context:epsg">Epigraphic
+                  collection</ref>; right: <ref target="http://gams.uni-graz.at/context:epis"
+                     >Seals of Salzburg Bishops</ref>
+               </figDesc>
+            </figure>
+            <p>For the encoding of epigraphic documents see <ref target="https://sourceforge.net/p/epidoc/wiki/Home/">EpiDoc</ref></p>
+         </div>
+         
+         <div type="slide">
+            <head>Poems</head>
+            <figure>
+               <graphic width="700px" url="media/poems.jpg"/>
+               <figDesc>Left: Peace and War by Guillaume Appolinare; Right: William Shakespeare's
+                  Sonnets</figDesc>
+            </figure>
+         </div>
+         
+         <div type="slide">
+            <head>Postcards</head>
+            <figure>
+               <graphic width="700px" url="media/postcards.jpg"/>
+               <figDesc><ref target="http://gams.uni-graz.at/vase">Visual Archive of Southeastern
+                  Europe</ref></figDesc>
+            </figure>
+         </div>
+         
+         <div type="slide">
+            <head>Print and online journals</head>
+            <figure>
+               <graphic width="700px" url="media/periodicals.jpg"/>
+               <figDesc>Left: <ref target="http://gams.uni-graz.at/spectators">Spectators</ref>;
+                  Right: <ref target="https://ride.i-d-e.de/">RIDE: A review journal for digital
+                     editions and resources</ref></figDesc>
+            </figure>
+         </div>
+         
+         <div type="slide">
+            <head>Authorial manuscripts</head>
+            <figure>
+               <graphic width="700px" url="media/authorialManuscripts.jpg"/>
+               <figDesc>Left: <ref target="https://shelleygodwinarchive.org">Shelley-Godwin
+                  Archive</ref>; Right: <ref target="https://gams.uni-graz.at/skerbisch"
+                     >Notebooks Hartmut Skerbisch</ref></figDesc>
+            </figure>
+         </div>
+         
+         <div type="slide">
+            <head>What is the TEI?</head>
+            <list>
+               <item>An <emph>encoding standard</emph> for the representation of texts in digital
+                  form <list>
+                     <item>Guidelines specifying encoding methods</item>
+                     <item>established standard in the Humanities, Social Sciences and
+                        Linguistics</item>
+                     <item>encoding of printed works, language information, letters, poems,
+                        performances, dictionaries, manuscripts, etc.</item>
+                  </list>
+               </item>
+               <item>A <emph>consortium</emph>
+                  <list>
+                     <item>founded in 1987</item>
+                     <item>which develops and maintains the standard</item>
+                  </list>
+               </item>
+            </list>
+            <figure>
+               <graphic width="200px" url="media/TEI.jpg"></graphic>
+            </figure>
+         </div>
+
+         <div type="slide">
+            <head>What does the TEI offer?</head>
+            <list>
+               <item>
+                  Guidelines for the encoding of texts
+                  <list>
+                     <item>Current version: TEI P5, Version 3.6.0</item>
+                     <item>A freely available manual „The Guidelines“</item>
+                     <item>Description an formal definitions of more than 576 markup distinctions</item>
+                     <item>Active participation: <ref target="https://github.com/TEIC/TEI/issues">https://github.com/TEIC/TEI/issues</ref></item>
+                  </list>
+               </item>
+               
+               <item>
+                  Tools
+                  <list>
+                     <item>Stylesheets for further transformation (HTML, PDF, EPUB,…)</item> 
+                     <item>Roma for the creation of project specific schemas</item>
+                  </list>
+               </item>
+               
+               <item>
+                  Activities
+                  <list>
+                     <item>Annual conference and members meeting (2020 in Lincoln, Nebraska)</item>
+                     <item>Special Interest Groups (e.g. manuscripts, ontologies, linguistics, correspondence, etc.)</item>
+                     <item>Mailing list <ref target="https://listserv.brown.edu/archives/cgi-bin/wa?A0=TEI-L">https://listserv.brown.edu/archives/cgi-bin/wa?A0=TEI-L</ref></item>
+                     <item>Journal of the Text Encoding Initiative</item>
+                  </list>
+               </item>
+            </list>
+         </div>
+         
+         <div type="slide">
+            <head>The TEI Community</head>
+            <figure>
+               <graphic width="700px" url="media/teicommunity.png"/>
+            </figure>
+         </div>
+        
+         <div type="slide">
+            <head>The modules</head>
+            <p>Reading the <ref
+                  target="https://www.tei-c.org/release/doc/tei-p5-doc/en/html/index.html">TEI
+                  Guidelines</ref></p>
+            <figure>
+               <graphic width="800px" url="media/teiGuidelines.jpg"/>
+            </figure>
+         </div>
+
+         <div type="slide">
+            <head>The elements</head>
+            <figure>
+               <graphic width="800px" url="media/teiElements.jpg"/>
+            </figure>
+         </div>
+
+         <div type="slide">
+            <head>TEI Basic structure</head>
+            <egXML xmlns="http://www.tei-c.org/ns/Examples">
+               &lt;TEI xmlns="http://www.tei-c.org/ns/1.0">
+                  <teiHeader>
+                     <!-- required: the document's metadata -->
+                     <fileDesc>
+                        <titleStmt>
+                           <title><!-- Title of the electronic document --></title>
+                        </titleStmt>
+                        <publicationStmt>
+                           <p><!-- Publication information --></p>
+                        </publicationStmt>
+                        <sourceDesc>
+                           <p><!-- Source description --></p>
+                        </sourceDesc>
+                     </fileDesc>
+                  </teiHeader>
+                  <text>
+                     <front>
+                        <!-- optional front matter of a unitary text -->
+                     </front>
+                     <body>
+                        <div>
+                           <!-- required body of first unitary text -->
+                        </div>
+                     </body>
+                     <back>
+                        <!-- optional back matter of a unitary text -->
+                     </back>
+                  </text>
+               &lt;/TEI>
+            </egXML>
+         </div>
+         
+         <div type="slide">
+            <head>TEI Infrastructure (module 1: infrastructure)</head>
+            <p>The module introduces the conceptual framework of the TEI 
+            </p>
+            <list>
+               <item>TEI Modules</item>
+               <item>Defining a TEI Schema</item>
+               <item>TEI Class System</item>
+               <item>…</item>
+            </list>
+         </div>
+         
+         <div type="slide">
+            <head>Default text structure (module 4: textstructure)</head>
+            <p>The module describes the default high-level structure for TEI documents. A full (valid) TEI document combines metadata represented in the <code>&lt;teiHeader></code> and the document represented by a <code>&lt;text></code> element (and/or <code>&lt;facsimile></code> and/or <code>&lt;sourceDoc></code>). 
+               </p>
+            <list>
+               <item>Body <code>&lt;body></code></item>
+               <item>Front Matter (title page, prefaces, dedications, etc.) <code>&lt;front></code></item>
+               <item>Back Matter (appendices, indices, etc.) <code>&lt;back></code></item>
+               <item>Divisions <code>&lt;div></code></item>
+               <item>Salutations <code>&lt;salute></code></item>
+               <item>Dateline <code>&lt;dateline></code></item>
+               <item>…</item>
+            </list>
+         </div>
+         
+         <div type="slide">
+            <head>TEI Header (module 2: header)</head>
+            <p>The TEI header module provides elements for the description of the encoded work‘s metadata </p>
+            <list>      
+               <item>File Description (mandatory) <code>&lt;fileDesc></code>
+               </item>
+               <item>Encoding Description <code>&lt;encodingDesc></code></item>
+               <item>Profile Description <code>&lt;profileDesc></code></item>
+               <item>Revision Description <code>&lt;revisionDesc></code></item>
+               <item>…</item>
+            </list>
+         </div>
+
+         <div type="slide">
+            <head>Elements available in all TEI documents (module 3: core)</head>
+            <p>The module describes elements which may appear in any kind of text. </p>
+            <list>
+               <item>Paragraphs <code>&lt;p></code></item>
+               <item>Punctuation <code>&lt;pc></code></item>
+               <item>Highlighting and Quotation <code>&lt;hi></code>, <code>&lt;q></code>, <code>&lt;quote></code></item>
+               <item>Simple Editorial Changes <code>&lt;sig></code>, <code>&lt;corr></code></item>
+               <item> Names, Dates, Numbers <code>&lt;name></code>, <code>&lt;date></code>, <code>&lt;number></code></item>
+               <item> Abbreviations <code>&lt;abbr></code>, <code>&lt;expan></code></item>
+               <item> Addresses <code>&lt;address></code></item>
+               <item> Simple Links and References <code>&lt;ref></code>, <code>&lt;ptr></code></item>
+               <item> Verse and Drama <code>&lt;lg></code>, <code>&lt;l></code></item>
+               <item> Lists <code>&lt;list></code>, <code>&lt;item></code></item>
+               <item> Notes <code>&lt;note></code></item>
+               <item> … </item>
+            </list>
+         </div>
+
+         <div type="slide">
+            <head>Exercise 2: Mark up a poem in TEI</head>
+            <list>
+               <item>Step 1: Start a new TEI P5 document <list>
+                     <item>From the ’File’ menu select ’New’, click on ’Framework-Templates’, select
+                        ’TEI P5’ and choose 'All'.</item>
+                     <item>This should open up a basic TEI document</item>
+                  </list>
+               </item>
+               <item>Step 2: Create a division within the 'body' <list>
+                     <item>Replace the <code>&lt;p></code> element with a <code>&lt;div></code> element</item>
+                     <item>Categorise the <code>&lt;div></code> as a 'verse', using the <code>@type</code> attribute</item>
+                     <item>Add a <code>&lt;head></code> element inside the <code>&lt;div></code> with the heading 'My
+                        favourite Sonnets'.</item>
+                     <item><egXML xmlns="http://www.tei-c.org/ns/Examples">
+                           <div type="verse">
+                              <head>My Favourite Sonnets</head>
+                              <!-- We will add the sonnet here -->
+                           </div>
+                        </egXML>
+                     </item>
+                  </list>
+               </item>
+            </list>
+         </div>
+
+         <div type="slide">
+            <head>Exercise 2: Mark up a poem in TEI</head>
+            <list>
+               <item>Step 3: Insert <ref target="sonnet18.txt">plain text</ref> into the
+                  editor or the encoded poem from the first exercise</item>
+               <item>Step 4: Mark up the stanzas (<code>&lt;lg></code>) and lines (<code>&lt;l></code>) 
+               </item>
+               <item>Step 5: Add a <code>@type</code> attribute to the stanzas to distinguish between 'quatrain'
+                  and 'couplet' groups.</item>
+               <item>Step 6: Check if your document is well-formed</item>
+               <item>Step 7: Mark up the rhyming words in your sonnet (use the Guidelines, <ref
+                     target="https://www.tei-c.org/release/doc/tei-p5-doc/en/html/VE.html">chapter 6
+                     'Verse'</ref>) </item>
+               <item>Step 8: Add basic metadata to the TEI header using <ref target="https://www.tei-c.org/release/doc/tei-p5-doc/en/html/HD.html">chapter 2</ref> </item>
+               <item><ref target="poem-tei.xml">Completed example</ref></item>
+            </list>
+         </div>
+         
+         <div type="slide">
+            <head>TEI Stylesheets: HTML Output</head>
+            <p>Use 'TEI P5 XML' transformation scenario in Oxygen</p>
+            <figure>
+               <graphic width="500px" url="media/TEItoHTML.jpg" />
+            </figure>
+         </div>
+         
+         <div type="slide">
+            <head>TEI Customization</head>
+            <list>
+               <item>A schema usually does not contain all elements and attributes of the TEI (TEI all) but consists of a project-specific selection of modules (customization).         
+               </item>
+               <item>ROMA allows for adjusting the TEI to individual specific needs (<ref target="https://romabeta.tei-c.org/">https://romabeta.tei-c.org/</ref>)</item>
+               <item>ODD (One Document Does it all)</item>
+            </list>
+         </div>
+
+         <div type="slide">
+            <head>All TEI modules</head>
+            <figure>
+               <graphic width="650px" url="media/modules-all.png"/>
+            </figure>
+         </div>
+
+         <div type="slide">
+            <head>Modules needed for our poem</head>
+            <figure>
+               <graphic width="650px" url="media/modules-selected.png"/>
+            </figure>
+         </div>
+
+         <div type="slide">
+            <head>Credits</head>
+            <p>Thanks to Lou Burnard, Syd Bauman, James Cummings, Sebastian Rahtz, and the whole TEI
+               Community for sharing workshop materials!</p>
+         </div>
+
+         <div type="slide">
+            <head>Some important links</head>
+            <list>
+               <item>TEI Website: <list>
+                     <item><ref target="https://www.tei-c.org">https://www.tei-c.org</ref></item>
+                  </list></item>
+               <item>What is the Text Encoding Initiative (Lou Burnard): <list>
+                     <item><ref target="https://books.openedition.org/oep/679?lang=en"
+                           >https://books.openedition.org/oep/679?lang=en</ref></item>
+                  </list></item>
+               <item>TEI GitHub repository: <list>
+                     <item><ref target="http://github.com/TEIC/TEI"
+                        >http://github.com/TEIC/TEI</ref></item>
+                  </list></item>
+               <item>Mailing list: <list>
+                     <item><ref target="mailto:TEI-L-subscribe-request@LISTSERV.BROWN.EDU"
+                           >TEI-L-subscribe-request@LISTSERV.BROWN.EDU</ref></item>
+                  </list></item>
+               <item>A bit of TEI's history: <list>
+                     <item><ref
+                           target="https://github.com/lb42/2018-09-vienna/blob/master/Slides/talk-tei.pdf"
+                           >https://github.com/lb42/2018-09-vienna/blob/master/Slides/talk-tei.pdf</ref></item>
+                  </list></item>
+            </list>
+         </div>
+
+      </body>
+   </text>
+</TEI>
