@@ -5,7 +5,7 @@
          xmlns:teix="http://www.tei-c.org/ns/Examples"
          datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes"
          ns="http://www.tei-c.org/ns/1.0"><!--
-Schema generated from ODD source 2019-10-01T15:37:38Z. .
+Schema generated from ODD source 2019-10-04T20:35:41Z. .
 TEI Edition: 
 TEI Edition Location: http://www.tei-c.org/Vault/P5//
   
@@ -2207,8 +2207,6 @@ Measures]</a:documentation>
          <attribute name="key">
             <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
             <choice>
-               <value>unmarked</value>
-               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">information not yet available</a:documentation>
                <value>high</value>
                <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">text has been republished very frequently during the period concerned</a:documentation>
                <value>low</value>
