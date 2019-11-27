@@ -5,7 +5,7 @@
          xmlns:teix="http://www.tei-c.org/ns/Examples"
          datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes"
          ns="http://www.tei-c.org/ns/1.0"><!--
-Schema generated from ODD source 2019-10-04T20:35:49Z. .
+Schema generated from ODD source 2019-10-15T13:32:09Z. .
 TEI Edition: 
 TEI Edition Location: http://www.tei-c.org/Vault/P5//
   
@@ -1255,6 +1255,7 @@ Suggested values include: 1] cm (centimetres); 2] mm (millimetres); 3] in (inche
          <choice>
             <ref name="p"/>
             <group>
+               <ref name="publisher"/>
                <ref name="date"/>
                <zeroOrMore>
                   <ref name="ref"/>
