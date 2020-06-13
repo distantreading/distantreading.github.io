@@ -79,11 +79,11 @@ tei-fileDesc > tei-publicationStmt tei-publisher:before {
  content: ' Published by ';
 }
 
-/* 
+
 tei-fileDesc > tei-publicationStmt tei-distributor:before {
  content: ' Available from '; 
 }
-*/
+
 
 tei-teiHeader tei-sourceDesc {
  display: block;
@@ -146,11 +146,16 @@ tei-div {
 tei-title {
  font-style: italic;
 }
-
-/*  tei-bibl > tei-author:before {
- content: ', by ';
+tei-title:after {
+ content:' ';
 }
- */
+
+tei-bibl > tei-author:before {
+ content: ' ';
+}
+tei-bibl > tei-publisher:before {
+ content: ' ';
+}
 
 tei-bibl > tei-date:before {
  content: ' (';
@@ -160,6 +165,9 @@ tei-bibl > tei-date:after {
  content: ') ';
 }
 
+tei-bibl > tei-ref:before {
+ content: ' ';
+ }
 tei-head {
  display: block;
 }
@@ -185,6 +193,17 @@ tei-p {
 tei-p[rend = red] {
  border: 2px solid red;
 }
+
+tei-quote {
+ display: block;
+ margin-left: 1.5em;
+ font-style:italic;
+}
+
+tei-l {
+ display: block;
+}
+
 tei-list {
  display: block;
  margin-left: 30px;
@@ -233,16 +252,14 @@ tei-figure {
  text-align: center;
 }
 
-tei-note:before {
- content: "   (NOTE: ";
+tei-back tei-note:before {
+ content: "  [" attr(id) "]  ";
 }
 
-tei-note:after {
- content: ") ";
-}
+
 
 tei-note {
- font-style: italic;
+ font-size: small;
 }
 
 tei-code {
