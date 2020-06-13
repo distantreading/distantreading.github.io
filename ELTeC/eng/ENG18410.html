@@ -3,15 +3,29 @@
  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>     
   <link rel="stylesheet" href="../../css/cetei.css" media="all" title="no title" />
   <link type="application/tei+xml" rel="alternate" href="https://raw.githubusercontent.com/COST-ELTeC/ELTeC-eng/master/level1/ENG18410_Sinclair.xml"/>
-<script src="../../js/CETEI.js" ></script>
- <script type="text/javascript">
-    var ceteicean = new CETEI();
+<script src="../../js/CETEI.js" >
+</script>
+ <script >
+   
+     var ceteicean = new CETEI();
+      let behaviors = {
+    "tei": {
+      "distributor": [
+  ["[ref]", ["<a href=\"$rw@ref\" target=\"_blank\">","</a>"]]
+],
+ "author": [
+  ["[ref]", ["<a href=\"$rw@ref\" target=\"_blank\">","</a>"]]
+]
+    }
+  };
     ceteicean.shadowCSS = "../../css/cetei.css";
-    ceteicean.getHTML5("https://raw.githubusercontent.com/COST-ELTeC/ELTeC-eng/master/level1/ENG18410_Sinclair.xml",function(data) {
+    ceteicean.addBehaviors(behaviors);
+    ceteicean.getHTML5("https://raw.githubusercontent.com/COST-ELTeC/ELTeC-eng/master/level1/ENG18410_Sinclair.xml",
+    function(data) {
   document.getElementsByTagName("body")[0].appendChild(data);});
   </script>
-   <title>ELTeC link file</title>
-    </head>
+ <!--  <title>ELTeC link file</title>
+-->    </head>
     <body>
         <a href="https://www.distant-reading.net/">
             <img src="../../media/distantreading.png" alt="logo"/>
