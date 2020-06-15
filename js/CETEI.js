@@ -2,97 +2,104 @@ var CETEI = (function () {
   'use strict';
 
   var defaultBehaviors = {
-   "namespaces": {
-    "tei": "http://www.tei-c.org/ns/1.0",
-    "teieg": "http://www.tei-c.org/ns/Examples",
-    "rng": "http://relaxng.org/ns/structure/1.0"
-   },
-   "tei": {
-    "eg":[ "<pre>", "</pre>"],
-    // inserts a link inside <ptr> using the @target; the link in the
-    // @href is piped through the rw (rewrite) function before insertion
-    "ptr":[ "<a href=\"$rw@target\">$@target</a>"],
-    // wraps the content of the <ref> in an HTML link
-    "ref":[[ "[target]",[ "<a href=\"$rw@target\">", "</a>"]]],
-    "graphic": function (elt) {
-     let content = new Image();
-     content.src = this.rw(elt.getAttribute("url"));
-     if (elt.hasAttribute("width")) {
-      content.setAttribute("width", elt.getAttribute("width"));
-     }
-     if (elt.hasAttribute("height")) {
-      content.setAttribute("height", elt.getAttribute("height"));
-     }
-     return content;
+    "namespaces": {
+      "tei": "http://www.tei-c.org/ns/1.0",
+      "teieg": "http://www.tei-c.org/ns/Examples",
+      "rng": "http://relaxng.org/ns/structure/1.0"  
     },
-    "list":[
-    // will only run on a list where @type="gloss"
-    [ "[type=gloss]", function (elt) {
-     let dl = document.createElement("dl");
-     for (let child of Array. from (elt.children)) {
-      if (child.nodeType == Node.ELEMENT_NODE) {
-       if (child.localName == "tei-label") {
-        let dt = document.createElement("dt");
-        dt.innerHTML = child.innerHTML;
-        dl.appendChild(dt);
-       }
-       if (child.localName == "tei-item") {
-        let dd = document.createElement("dd");
-        dd.innerHTML = child.innerHTML;
-        dl.appendChild(dd);
-       }
+    "tei": {
+      "eg": ["<pre>","</pre>"],
+      // inserts a link inside <ptr> using the @target; the link in the
+      // @href is piped through the rw (rewrite) function before insertion
+      "ptr": ["<a href=\"$rw$first@target\">$@target</a>"],
+      // wraps the content of the <ref> in an HTML link
+      "ref": [
+        ["[target]", ["<a href=\"$rw$first@target\">","</a>"]]
+      ],
+      "graphic": function(elt) {
+        let content = new Image();
+        content.src = this.rw(elt.getAttribute("url"));
+        if (elt.hasAttribute("width")) {
+          content.setAttribute("width",elt.getAttribute("width"));
+        }
+        if (elt.hasAttribute("height")) {
+          content.setAttribute("height",elt.getAttribute("height"));
+        }
+        return content;
+      },
+      "list": [
+        // will only run on a list where @type="gloss"
+        ["[type=gloss]", function(elt) {
+          let dl = document.createElement("dl");
+          for (let child of Array.from(elt.children)) {
+            if (child.nodeType == Node.ELEMENT_NODE) {
+              if (child.localName == "tei-label") {
+                let dt = document.createElement("dt");
+                dt.innerHTML = child.innerHTML;
+                dl.appendChild(dt);
+              }
+              if (child.localName == "tei-item") {
+                let dd = document.createElement("dd");
+                dd.innerHTML = child.innerHTML;
+                dl.appendChild(dd);
+              }
+            }
+          }
+          return dl;
+        }
+      ]],
+      "note": [
+        // Make endnotes
+        ["[place=end]", function(elt){
+          if (!this.noteIndex){
+            this["noteIndex"] = 1;
+          } else {
+            this.noteIndex++;
+          }
+          let id = "_note_" + this.noteIndex;
+          let link = document.createElement("a");
+          link.setAttribute("id", "src" + id);
+          link.setAttribute("href", "#" + id);
+          link.innerHTML = this.noteIndex;
+          let content = document.createElement("sup");
+          content.appendChild(link);
+          let notes = this.dom.querySelector("ol.notes");
+          if (!notes) {
+            notes = document.createElement("ol");
+            notes.setAttribute("class", "notes");
+            this.dom.appendChild(notes);
+          }
+          let note = document.createElement("li");
+          note.id = id;
+          note.innerHTML = elt.innerHTML;
+          notes.appendChild(note);
+          return content;
+        }],
+        ["_", ["(",")"]]
+      ],
+      "teiHeader": function(e) {
+        this.hideContent(e, false);
+      },
+      "title": [
+        ["tei-titlestmt>tei-title", function(elt) {
+          let title = document.createElement("title");
+          title.innerHTML = elt.innerText;
+          document.querySelector("head").appendChild(title);
+        }]
+      ]
+    },
+    "teieg": {
+      "egXML": function(elt) {
+        let pre = document.createElement("pre");
+        let content = this.serialize(elt, true).replace(/</g, "&lt;");
+        let ws = content.match(/^[\t ]+/);
+        if (ws) {
+          content = content.replace(new RegExp("^" + ws[0], "mg"), "");
+        }
+        pre.innerHTML = content;
+        return pre;
       }
-     }
-     return dl;
-    }]],
-    "note":[
-    // Make endnotes
-    [ "[place=end]", function (elt) {
-     if (! this.noteIndex) {
-      this[ "noteIndex"] = 1;
-     } else {
-      this.noteIndex++;
-     }
-     let id = "_note_" + this.noteIndex;
-     let link = document.createElement("a");
-     link.setAttribute("id", "src" + id);
-     link.setAttribute("href", "#" + id);
-     link.innerHTML = this.noteIndex;
-     let content = document.createElement("sup");
-     content.appendChild(link);
-     let notes = this.dom.querySelector("ol.notes");
-     if (! notes) {
-      notes = document.createElement("ol");
-      notes.setAttribute("class", "notes");
-      this.dom.appendChild(notes);
-     }
-     let note = document.createElement("li");
-     note.id = id;
-     note.innerHTML = elt.innerHTML;
-     notes.appendChild(note);
-     return content;
-    }],[ "_",[ "(", ")"]]],
-   /*   "teiHeader": function (e) {
-     this.hideContent(e, false);
-    },*/
-    "title":[[ "tei-titlestmt>tei-title", function (elt) {
-     let title = document.createElement("title");
-     title.innerHTML = elt.innerText;
-     document.querySelector("head").appendChild(title);
-    }]]
-   },
-   "teieg": {
-    "egXML": function (elt) {
-     let pre = document.createElement("pre");
-     let content = this.serialize(elt, true).replace(/</g, "&lt;");
-     let ws = content.match(/^[\t ]+/);
-     if (ws) {
-      content = content.replace(new RegExp("^" + ws[0], "mg"), "");
-     }
-     pre.innerHTML = content;
-     return pre;
     }
-   }
   };
 
   /* 
@@ -386,20 +393,18 @@ var CETEI = (function () {
 
   function learnElementNames(XML_dom, namespaces) {
     const root = XML_dom.documentElement;
+    let i = 1;
+    let qname = function(e) { 
+      if (!namespaces.has(e.namespaceURI ? e.namespaceURI : "")) {
+        namespaces.set(e.namespaceURI, "ns" + i++);
+      } 
+      return namespaces.get(e.namespaceURI ? e.namespaceURI : "") + ":" + e.localName;
+    };
     const els = new Set(
-      Array.from(root.querySelectorAll("*"),
-      e => (
-        namespaces.has(e.namespaceURI ? e.namespaceURI : "")
-        ? namespaces.get(e.namespaceURI ? e.namespaceURI : "") + ":"
-        : ""
-      ) + e.localName) );
+      Array.from(root.querySelectorAll("*"), qname));
+      
     // Add the root element to the array
-    els.add(
-      (
-        namespaces.has(root.namespaceURI ? root.namespaceURI : "")
-        ? namespaces.get(root.namespaceURI ? root.namespaceURI : "") + ":"
-        : ""
-      ) + root.localName);
+    els.add(qname(root));
     return els
   }
 
@@ -608,16 +613,6 @@ var CETEI = (function () {
     }
 
     /* 
-      If the TEI document defines CSS styles in its tagsDecl, this method
-      copies them into the wrapper HTML document's head.
-    */
-    addStyle(doc, data) {
-      if (this.hasStyle) {
-        doc.getElementsByTagName("head").item(0).appendChild(data.getElementsByTagName("style").item(0).cloneNode(true));
-      }
-    }
-
-    /* 
       To change a namespace -> prefix mapping, the namespace must first be 
       unset. Takes a namespace URI. In order to process a TEI P4 document, e.g.,
       the TEI namespace must be unset before it can be set to the empty string.
@@ -812,6 +807,8 @@ var CETEI = (function () {
           } else {
             result = result.replace(replacements[0], elt.getAttribute(replacements[2]));
           }
+        } else {
+          result = result.replace(replacements[0], "");
         }
       }
     }
