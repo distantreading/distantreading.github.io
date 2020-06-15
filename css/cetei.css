@@ -81,7 +81,7 @@ tei-fileDesc > tei-publicationStmt tei-publisher:before {
 
 
 tei-fileDesc > tei-publicationStmt tei-distributor:before {
- content: ' Available from '; 
+ content: ' Available from ';
 }
 
 
@@ -125,7 +125,7 @@ tei-textDesc:before {
 }
  */
 
-tei-textDesc el-authorGender {
+el-authorGender {
  content: 'authorGender: ' attr(key);
 }
 
@@ -147,7 +147,7 @@ tei-title {
  font-style: italic;
 }
 tei-title:after {
- content:' ';
+ content: ' ';
 }
 
 tei-bibl > tei-author:before {
@@ -156,6 +156,10 @@ tei-bibl > tei-author:before {
 tei-bibl > tei-publisher:before {
  content: ' ';
 }
+tei-bibl > tei-pubPlace:before {
+ content: ' ';
+}
+
 
 tei-bibl > tei-date:before {
  content: ' (';
@@ -167,7 +171,7 @@ tei-bibl > tei-date:after {
 
 tei-bibl > tei-ref:before {
  content: ' ';
- }
+}
 tei-head {
  display: block;
 }
@@ -197,13 +201,17 @@ tei-p[rend = red] {
 tei-quote {
  display: block;
  margin-left: 1.5em;
- font-style:italic;
+ font-style: italic;
 }
 
 tei-l {
  display: block;
 }
 
+tei-corr {
+ color: gray;
+}
+}
 tei-list {
  display: block;
  margin-left: 30px;

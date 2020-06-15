@@ -2,41 +2,30 @@
 <html>
  <head>
   <meta charset="UTF-8">
-   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-     <link rel="stylesheet" href="../../css/cetei.css" media="all"  />
-     <script src="../../js/CETEI.js" ></script>
-      <script>
-    let c = new CETEI();
-    let behaviors = {
-     "namespaces": {
-         "el": "http://distantreading.net/eltec/ns"
-         }, 
-      "tei": {            
-       "distributor": [
-     ["[ref]", ["<a href='$rw@ref' target='_blank'>","</a>"]]
-],
-        "head": function(e) {
-          let level = document.evaluate("count(ancestor::tei-div)", e, null, XPathResult.NUMBER_TYPE, null);
-          let result = document.createElement("h" + (level.numberValue>7 ? 7 : level.numberValue));
-          for (let n of Array.from(e.childNodes)) {
-            result.appendChild(n.cloneNode());
-          }
-          return result;
-        },
-        "lb": ["<br>"],
-        /* Insert a <p> with the content of the <pb>'s @n attribute inside it
-           Add a line above with CSS */
-        "pb": ["<p class='break'>$@n</p>"],
-      }
-    };
-    c.addBehaviors(behaviors);
-    c.getHTML5("https://raw.githubusercontent.com/COST-ELTeC/ELTeC-eng/master/level1/ENG18511_Skene.xml", function(data){
-      document.getElementsByTagName('body')[0].appendChild(data);
-    });
-  </script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+  <link rel="stylesheet" href="../../css/cetei.css" media="all" />
+  <script src="../../js/CETEI.js"></script>
+  <script>
+   let c = new CETEI();
+   let behaviors = {
+    "namespaces": {
+     "el": "http://distantreading.net/eltec/ns"
+    },
+    "tei": {
+     "teiHeader": null,
+     "distributor":[[ "[ref]",[ "<a href='$rw@ref' target='_blank'>", "</a>"]]],
+     "author":[[ "[ref]",[ "<a href='$rw@ref' target='_blank'>", "</a>"]]],
+     "pb":[ "<p class='break'>[page $@n]</p>"],
+     "ref": ["<a href=\"$rw@target\"> online", " </a>"],
+    },
+  };
+  c.addBehaviors(behaviors);
+  c.getHTML5("https://raw.githubusercontent.com/COST-ELTeC/ELTeC-eng/master/level1/ENG18511_Skene.xml", function (data) {
+   document.getElementsByTagName('body')[0].appendChild(data);
+  });</script>
  </head>
- <body>
-  
- </body>
+ <body><a href="https://www.distant-reading.net/">
+  <img src="../../media/distantreading.png" alt="logo"/>
+ </a> </body>
 </html>
