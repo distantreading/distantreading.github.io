@@ -1,17 +1,29 @@
 <!DOCTYPE html>
- <html><head>
- <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>     
-  <link rel="stylesheet" href="../../css/cetei.css" media="all" title="no title" />
-  <link type="application/tei+xml" rel="alternate" href="https://raw.githubusercontent.com/COST-ELTeC/ELTeC-por/master/level1/POR0073_MatMor_Tempestades.xml"/>
-<script src="../../js/CETEI.js" ></script>
- <script type="text/javascript">
-    var ceteicean = new CETEI();
-    ceteicean.shadowCSS = "../../css/cetei.css";
-    ceteicean.getHTML5("https://raw.githubusercontent.com/COST-ELTeC/ELTeC-por/master/level1/POR0073_MatMor_Tempestades.xml",function(data) {
+<html><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+  <link rel="stylesheet" href="../../css/cetei.css" media="all" />
+  <script src="../../js/CETEI.js"></script>
+  <script>
+   let c = new CETEI(); 
+   let behaviors = {
+    "namespaces": {
+     "el": "http://distantreading.net/eltec/ns"
+    },
+    "tei": {
+     "teiHeader": null,
+     "distributor":[[ "[ref]",[ "<a href='$rw@ref' target='_blank'>", "</a>"]]],
+     "author":[[ "[ref]",[ "<a href='$rw@ref' target='_blank'>", "</a>"]]],
+     "pb":[ "<p class='break'>[page $@n]</p>"],
+     "ref": ["<a href='$rw@target'> online "," </a>"],
+    },
+  };
+  c.addBehaviors(behaviors);
+  c.getHTML5("https://raw.githubusercontent.com/COST-ELTeC/ELTeC-por/master/level1/POR0073_MatMor_Tempestades.xml",function(data) {
   document.getElementsByTagName("body")[0].appendChild(data);});
   </script>
-   <title>ELTeC link file</title>
-    </head>
+     </head>
     <body>
         <a href="https://www.distant-reading.net/">
             <img src="../../media/distantreading.png" alt="logo"/>
