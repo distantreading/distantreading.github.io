@@ -8,8 +8,8 @@
 
 - [Encoding Guidelines for the ELTeC: level 1](https://distantreading.github.io/Schema/eltec-1.html)
 - [Encoding Guidelines for the ELTeC: level 2](https://distantreading.github.io/Schema/eltec-2.html)
-- [Encoding for ELTeC : a summary guide / Part 1 : the Header](https:distantreading.github.io/Training/Budapest/encodingGuide-1.html)
-- [Encoding for ELTeC : a summary guide / Part 2 : the Text](https:distantreading.github.io/Training/Budapest/encodingGuide-2.html)
+- [Encoding for ELTeC : a summary guide / Part 1 : the Header](https://distantreading.github.io/Training/Budapest/encodingGuide-1.html)
+- [Encoding for ELTeC : a summary guide / Part 2 : the Text](https://distantreading.github.io/Training/Budapest/encodingGuide-2.html)
 
 
 ## WG1 Discussion drafts
