@@ -4,12 +4,12 @@
 
 - [current state of text collection](https://distantreading.github.io/ELTeC/index.html) includes links to visualisations of each available text
 
-## Documents
+## Reference Documents
 
 - [Encoding Guidelines for the ELTeC: level 1](https://distantreading.github.io/Schema/eltec-1.html)
 - [Encoding Guidelines for the ELTeC: level 2](https://distantreading.github.io/Schema/eltec-2.html)
-- [Encoding for ELTeC : a summary guide / Part 1 : the Header](https:distantreading.github.io/Training/Budapest/encodingGuide-1.html)
-- [Encoding for ELTeC : a summary guide / Part 2 : the Text](https:distantreading.github.io/Training/Budapest/encodingGuide-2.html)
+- [Encoding for ELTeC : a summary guide / Part 1 : the Header](https://distantreading.github.io/Training/Budapest/encodingGuide-1.html)
+- [Encoding for ELTeC : a summary guide / Part 2 : the Text](https://distantreading.github.io/Training/Budapest/encodingGuide-2.html)
 
 
 ## WG1 Discussion drafts
@@ -29,7 +29,8 @@
  „Optical Character Recognition and Text Encoding for the production of ELTeC“ (University of Würzburg, 16-17 April, 2018)
 
 - [Budapest](https://distantreading.github.io/Training/Budapest/) "Corpus design and text contribution for ELTeC" (Eötvös Loránd University, Budapest, 23-25 September 2019)
-
+- [Datathon](https://github.com/distantreading/2021-09-datathon)
+ELTeC Datathon: Online, 27 September 2021
 ## Meetings
 
 ### WG1 first meeting (Praha, 12-14 February, 2018)
