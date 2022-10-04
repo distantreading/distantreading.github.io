@@ -9,7 +9,8 @@ body {
 
 table {
  border-spacing: 0;
- border: 1px solid #ddd;
+ border: 4px solid #ddd;
+ margin: 10mm;
 }
 
 th {

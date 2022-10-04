@@ -1,0 +1,245 @@
+<!DOCTYPE html><html>
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+      <link rel="stylesheet" type="text/css" href="https://distantreading.github.io/css/eltec-styler.css">
+      <title>Contents of ELTeC-nor-ext</title>
+   </head>
+   <body>
+      <h4>On 2022-05-25 ELTeC-nor-ext contains 5 texts containing 187124 words</h4>
+      <p class="graphic"><img src="mosaic.svg"><input type="button" value="Explainer" onclick="window.open('../explainer.html','popUpWindow',         'height=600,width=500,left=100,top=100,resizable=yes,         scrollbars=yes,toolbar=no,menubar=no,location=no,directories=no, status=yes');"></p>
+      <p class="explain">Click on a column heading to sort. Click on a text identifier to
+         read the text (may not work in older browsers).
+      </p>
+      <table class="catalogue" id="theTable">
+         <tr class="label">
+            <th onclick="sortTable(0)">Identifier</th>
+            <th onclick="sortTable(1)">Encoding</th>
+            <th onclick="sortTableNumerically(2)">Pages</th>
+            <th onclick="sortTableNumerically(3)">Words</th>
+            <th onclick="sortTable(4)">(Size)</th>
+            <th onclick="sortTable(5)">Date (Slot)</th>
+            <th onclick="sortTable(6)">Title</th>
+            <th onclick="sortTable(7)">Author</th>
+            <th onclick="sortTable(8)">Sex</th>
+            <th onclick="sortTable(9)">Reprints</th>
+         </tr>
+         <tr>
+            <td><a href="NOR0101.html">NOR0101</a><a href="https://raw.githubusercontent.com/COST-ELTeC/ELTeC-nor-ext/master/level1/NOR0101_Krogh_Albertine_tekst_1.xml"><img src="../../media/teiLogo.jpg"></a></td>
+            <td>eltec-1</td>
+            <td>
+               0
+               
+            </td>
+            <td>
+               44842
+               
+            </td>
+            <td>(short) </td>
+            <td>?  (T3) </td>
+            <td>
+               Albertine 
+            </td>
+            <td>Krogh, Christian (1852-1925)</td>
+            <td>M</td>
+            <td>low</td>
+         </tr>
+         <tr>
+            <td><a href="NOR0102.html">NOR0102</a><a href="https://raw.githubusercontent.com/COST-ELTeC/ELTeC-nor-ext/master/level1/NOR0102_Garborg_Kvinden_Skabt_af_Manden_tekst_1.xml"><img src="../../media/teiLogo.jpg"></a></td>
+            <td>eltec-1</td>
+            <td>
+               131
+               
+            </td>
+            <td>
+               26642
+               
+            </td>
+            <td>(short) </td>
+            <td>?  (T4) </td>
+            <td>
+               Kvinden Skabt af Manden 
+            </td>
+            <td>Garborg, Hulda (1862-1934)</td>
+            <td>F</td>
+            <td>high</td>
+         </tr>
+         <tr>
+            <td><a href="NOR0103.html">NOR0103</a><a href="https://raw.githubusercontent.com/COST-ELTeC/ELTeC-nor-ext/master/level1/NOR0103_Elvestad_Angsten_tekst_1.xml"><img src="../../media/teiLogo.jpg"></a></td>
+            <td>eltec-1</td>
+            <td>
+               0
+               
+            </td>
+            <td>
+               28864
+               
+            </td>
+            <td>(short) </td>
+            <td>?  (T4) </td>
+            <td>
+               Angsten 
+            </td>
+            <td>Elvestad, Sven (1884-1934)</td>
+            <td>M</td>
+            <td>low</td>
+         </tr>
+         <tr>
+            <td><a href="NOR0104.html">NOR0104</a><a href="https://raw.githubusercontent.com/COST-ELTeC/ELTeC-nor-ext/master/level1/NOR0104_Skram_Professor_Hieronimus_tekst_1.xml"><img src="../../media/teiLogo.jpg"></a></td>
+            <td>eltec-1</td>
+            <td>
+               0
+               
+            </td>
+            <td>
+               58808
+               
+            </td>
+            <td>(medium) </td>
+            <td>?  (T3) </td>
+            <td>
+               Professor Hieronimus 
+            </td>
+            <td>Skram, Amalie (1846-1905)</td>
+            <td>F</td>
+            <td>high</td>
+         </tr>
+         <tr>
+            <td><a href="NOR0105.html">NOR0105</a><a href="https://raw.githubusercontent.com/COST-ELTeC/ELTeC-nor-ext/master/level1/NOR0105_Zwilgmeyer_Annikken_Pr%C3%A6stgaren_tekst_1.xml"><img src="../../media/teiLogo.jpg"></a></td>
+            <td>eltec-1</td>
+            <td>
+               0
+               
+            </td>
+            <td>
+               27968
+               
+            </td>
+            <td>(short) </td>
+            <td>?  (T4) </td>
+            <td>
+               Annikken Præstgaren 
+            </td>
+            <td>Zwilgmeyer, Dikken (1846-1905)</td>
+            <td>F</td>
+            <td>high</td>
+         </tr>
+      </table><script>
+                    function sortTable(n) {
+                    var table, rows, switching, i, x, y, shouldSwitch, dir, switchcount = 0;
+                    table = document.getElementById("theTable");
+                    switching = true;
+                    //Set the sorting direction to ascending:
+                    dir = "asc"; 
+                    /*Make a loop that will continue until
+                    no switching has been done:*/
+                    while (switching) {
+                    //start by saying: no switching is done:
+                    switching = false;
+                    rows = table.rows;
+                    /*Loop through all table rows (except the
+                    first, which contains table headers):*/
+                    for (i = 1; i < (rows.length - 1); i++) {
+                    //start by saying there should be no switching:
+                    shouldSwitch = false;
+                    /*Get the two elements you want to compare,
+                    one from current row and one from the next:*/
+                    x = rows[i].getElementsByTagName("td")[n];
+                    y = rows[i + 1].getElementsByTagName("td")[n];
+                    /*check if the two rows should switch place,
+                    based on the direction, asc or desc:*/
+                    
+                    //if (Number(x.innerHTML) > Number(y.innerHTML)) {
+                    //shouldSwitch = true;
+                    //break;
+                    //}
+                    
+                    
+                    if (dir == "asc") {
+                    
+                    if (x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase()) {
+                    //if so, mark as a switch and break the loop:
+                    shouldSwitch= true;
+                    break;
+                    }
+                    } else if (dir == "desc") {
+                    if (x.innerHTML.toLowerCase() < y.innerHTML.toLowerCase()) {
+                    //if so, mark as a switch and break the loop:
+                    shouldSwitch = true;
+                    break;
+                    }
+                    }
+                    }
+                    if (shouldSwitch) {
+                    /*If a switch has been marked, make the switch
+                    and mark that a switch has been done:*/
+                    rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+                    switching = true;
+                    //Each time a switch is done, increase this count by 1:
+                    switchcount ++;      
+                    } else {
+                    /*If no switching has been done AND the direction is "asc",
+                    set the direction to "desc" and run the while loop again.*/
+                    if (switchcount == 0 && dir == "asc") {
+                    dir = "desc";
+                    switching = true;
+                    }
+                    }
+                    }
+                    }
+                    function sortTableNumerically(n) {
+                    var table, rows, switching, i, x, y, shouldSwitch, dir, switchcount = 0;
+                    table = document.getElementById("theTable");
+                    switching = true;
+                    //Set the sorting direction to ascending:
+                    dir = "asc"; 
+                    /*Make a loop that will continue until
+                    no switching has been done:*/
+                    while (switching) {
+                    //start by saying: no switching is done:
+                    switching = false;
+                    rows = table.rows;
+                    /*Loop through all table rows (except the
+                    first, which contains table headers):*/
+                    for (i = 1; i < (rows.length - 1); i++) {
+                    //start by saying there should be no switching:
+                    shouldSwitch = false;
+                    /*Get the two elements you want to compare,
+                    one from current row and one from the next:*/
+                    x = rows[i].getElementsByTagName("td")[n];
+                    y = rows[i + 1].getElementsByTagName("td")[n];
+                    /*check if the two rows should switch place,
+                    based on the direction, asc or desc:*/
+                        if (dir == "asc") {
+                    
+                    if (Number(x.innerHTML) > Number(y.innerHTML)) {
+                    //if so, mark as a switch and break the loop:
+                    shouldSwitch= true;
+                    break;
+                    }
+                    } else if (dir == "desc") {
+                    if (Number(x.innerHTML) > Number(y.innerHTML)) {
+                    //if so, mark as a switch and break the loop:
+                    shouldSwitch = true;
+                    break;
+                    }
+                    }
+                    }
+                    if (shouldSwitch) {
+                    /*If a switch has been marked, make the switch
+                    and mark that a switch has been done:*/
+                    rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+                    switching = true;
+                    //Each time a switch is done, increase this count by 1:
+                    switchcount ++;      
+                    } else {
+                    /*If no switching has been done AND the direction is "asc",
+                    set the direction to "desc" and run the while loop again.*/
+                    if (switchcount == 0 && dir == "asc") {
+                    dir = "desc";
+                    switching = true;
+                    }
+                    }
+                    }
+                    }
+                </script></body>
+</html>
